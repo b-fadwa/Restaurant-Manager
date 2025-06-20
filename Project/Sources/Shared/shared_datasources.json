@@ -1,0 +1,546 @@
+{
+	"dishModule": [
+		{
+			"id": "dishes",
+			"type": "entitysel",
+			"dataclass": "Dish",
+			"namespace": "dishModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedDish",
+			"type": "entity",
+			"dataclass": "Dish",
+			"from": "dishes",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "products",
+			"type": "entitysel",
+			"dataclass": "DishProduct",
+			"from": "selectedDish.dishProducts",
+			"namespace": "dishModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100,
+			"name": "products",
+			"events": []
+		},
+		{
+			"id": "menusections",
+			"type": "entitysel",
+			"dataclass": "MenuSection",
+			"namespace": "dishModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "newDish",
+			"type": "entity",
+			"dataclass": "Dish",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedSection",
+			"type": "entity",
+			"dataclass": "MenuSection",
+			"from": "menusections",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "ingredients",
+			"type": "entitysel",
+			"dataclass": "Product",
+			"namespace": "dishModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedProduct",
+			"type": "entity",
+			"dataclass": "Product",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "filterMenu",
+			"type": "entity",
+			"dataclass": "MenuSection",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null,
+			"events": [
+				{
+					"type": "method",
+					"dataclass": "Dish",
+					"events": [
+						"onChange"
+					],
+					"id": "mK1jXs5iy5FLX2dUY1XcjV",
+					"method": "ds.Dish.filter",
+					"params": [
+						{
+							"name": "param",
+							"type": "cs.MenuSectionEntity",
+							"datasource": "dishModule:filterMenu",
+							"id": "7Hk1Big5M5Pv9cmLDPypkr"
+						}
+					],
+					"datasource": "",
+					"returns": {
+						"name": "result",
+						"type": "cs.DishSelection",
+						"datasource": "dishModule:dishes"
+					}
+				},
+				{
+					"type": "simple-action",
+					"id": "x9wFLcAsFjoX2ii2Ts4nos",
+					"events": [
+						"onChange"
+					],
+					"action": "first",
+					"datasource": {
+						"name": "selectedDish",
+						"type": "entity",
+						"namespace": "dishModule",
+						"from": "dishes"
+					},
+					"actionType": "datasource"
+				}
+			]
+		},
+		{
+			"id": "newIngredient",
+			"type": "entity",
+			"dataclass": "DishProduct",
+			"from": "products",
+			"namespace": "dishModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "testdishProduct",
+			"type": "entity",
+			"dataclass": "DishProduct",
+			"from": "products",
+			"namespace": "dishModule",
+			"initialValue": "first",
+			"depth": null,
+			"events": []
+		},
+		{
+			"id": "protein",
+			"type": "scalar",
+			"namespace": "dishModule",
+			"dataType": "number",
+			"initialValue": "0"
+		},
+		{
+			"id": "fat",
+			"type": "scalar",
+			"namespace": "dishModule",
+			"dataType": "number",
+			"initialValue": "0"
+		},
+		{
+			"id": "carbs",
+			"type": "scalar",
+			"namespace": "dishModule",
+			"dataType": "number",
+			"initialValue": "0"
+		}
+	],
+	"Shared": [
+		{
+			"id": "dropUUID",
+			"type": "scalar",
+			"namespace": "Shared",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "dropDc",
+			"type": "scalar",
+			"namespace": "Shared",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "currentUser",
+			"type": "entity",
+			"dataclass": "User",
+			"namespace": "Shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "currentDate",
+			"type": "scalar",
+			"namespace": "Shared",
+			"dataType": "date",
+			"initialValue": "22/01/2024"
+		}
+	],
+	"OrdersModule": [
+		{
+			"id": "orders",
+			"type": "entitysel",
+			"dataclass": "Order",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100,
+			"events": []
+		},
+		{
+			"id": "selectedOrder",
+			"type": "entity",
+			"dataclass": "Order",
+			"from": "orders",
+			"namespace": "OrdersModule",
+			"initialValue": "first",
+			"depth": null,
+			"events": []
+		},
+		{
+			"id": "newOrder",
+			"type": "entity",
+			"dataclass": "Order",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "waiters",
+			"type": "entitysel",
+			"dataclass": "Waiter",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "groupedOrderDishes",
+			"type": "entitysel",
+			"dataclass": "OrderDish",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "newOrderDish",
+			"type": "entity",
+			"dataclass": "OrderDish",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedWaiter",
+			"type": "entity",
+			"dataclass": "Waiter",
+			"from": "waiters",
+			"namespace": "OrdersModule",
+			"initialValue": "",
+			"depth": null,
+			"events": [
+				{
+					"type": "method",
+					"dataclass": "Order",
+					"events": [
+						"onChange"
+					],
+					"id": "txFCsna9Pq4wGLETAECnjn",
+					"method": "ds.Order.filtering",
+					"params": [
+						{
+							"name": "dateSearch",
+							"type": "variant",
+							"datasource": "OrdersModule:orderTime",
+							"id": "imHcSuCD7pmeKSKLpU48iX"
+						},
+						{
+							"name": "waiter",
+							"type": "cs.WaiterEntity",
+							"datasource": "OrdersModule:selectedWaiter",
+							"id": "eXSh6Rb5GigFEkLTazLatv"
+						},
+						{
+							"name": "status",
+							"type": "variant",
+							"datasource": "OrdersModule:statusFilter",
+							"id": "xmkcjbP2Nh5guvr1uWNkhY"
+						}
+					],
+					"datasource": "",
+					"returns": {
+						"name": "result",
+						"type": "cs.OrderSelection",
+						"datasource": "OrdersModule:orders"
+					},
+					"feedback": true,
+					"disabled": true
+				},
+				{
+					"type": "method",
+					"dataclass": "DataStore",
+					"events": [
+						"onChange"
+					],
+					"id": "eqEi3N5TEVzYQXczKf71Fb",
+					"method": "ds.noData",
+					"params": [
+						{
+							"name": "selectionLength",
+							"type": "variant",
+							"datasource": "OrdersModule:orders.length",
+							"id": "mRcyvir9su8JyHGYgeh1xd"
+						},
+						{
+							"name": "toHidePart",
+							"type": "string",
+							"datasource": "",
+							"id": "8Zq16i8qYmeqq9pyyrNpek",
+							"isHardCoded": true,
+							"hardCodedValue": "toHideWhenNoData"
+						},
+						{
+							"name": "toShowPart",
+							"type": "string",
+							"datasource": "",
+							"id": "2WKNGLb4xSxSLjKKBYdL3K",
+							"isHardCoded": true,
+							"hardCodedValue": "toShowWhenNoData"
+						}
+					],
+					"datasource": "",
+					"returns": {
+						"name": "result",
+						"type": "Variable"
+					},
+					"disabled": true
+				}
+			]
+		},
+		{
+			"id": "groupedOD",
+			"type": "scalar",
+			"namespace": "OrdersModule",
+			"dataType": "array",
+			"initialValue": []
+		},
+		{
+			"id": "newGroupOD",
+			"type": "scalar",
+			"namespace": "OrdersModule",
+			"dataType": "array",
+			"initialValue": []
+		},
+		{
+			"id": "oneGroupedOD",
+			"type": "scalar",
+			"from": "groupedOD",
+			"namespace": "OrdersModule",
+			"dataType": "object",
+			"initialValue": "first"
+		},
+		{
+			"id": "oneNewGroupedOD",
+			"type": "scalar",
+			"from": "newGroupOD",
+			"namespace": "OrdersModule",
+			"dataType": "object",
+			"initialValue": "first"
+		}
+	],
+	"inventoryModule": [
+		{
+			"id": "suppliers",
+			"type": "entitysel",
+			"dataclass": "Supplier",
+			"namespace": "inventoryModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedSupplier",
+			"type": "entity",
+			"dataclass": "Supplier",
+			"from": "suppliers",
+			"namespace": "inventoryModule",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "selectedIngredient",
+			"type": "entity",
+			"dataclass": "Product",
+			"from": "inventory",
+			"namespace": "inventoryModule",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "products",
+			"type": "entitysel",
+			"dataclass": "Product",
+			"namespace": "inventoryModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "inventory",
+			"type": "entitysel",
+			"dataclass": "Product",
+			"namespace": "inventoryModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "newProduct",
+			"type": "entity",
+			"dataclass": "Product",
+			"namespace": "inventoryModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "categories",
+			"type": "entitysel",
+			"dataclass": "Category",
+			"namespace": "inventoryModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedPS",
+			"type": "entity",
+			"dataclass": "ProductSupplier",
+			"namespace": "inventoryModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "newSupplier",
+			"type": "entity",
+			"dataclass": "Supplier",
+			"namespace": "inventoryModule",
+			"initialValue": "",
+			"depth": null
+		}
+	],
+	"menuSectionModule": [
+		{
+			"id": "sections",
+			"type": "entitysel",
+			"dataclass": "MenuSection",
+			"namespace": "menuSectionModule",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedSection",
+			"type": "entity",
+			"dataclass": "MenuSection",
+			"from": "sections",
+			"namespace": "menuSectionModule",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "copiedMenuDishes",
+			"type": "entitysel",
+			"dataclass": "Dish",
+			"namespace": "menuSectionModule",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "newSection",
+			"type": "entity",
+			"dataclass": "MenuSection",
+			"namespace": "menuSectionModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selCopiedDish",
+			"type": "entity",
+			"dataclass": "Dish",
+			"from": "copiedMenuDishes",
+			"namespace": "menuSectionModule",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "newSectionDishes",
+			"type": "entitysel",
+			"dataclass": "Dish",
+			"namespace": "menuSectionModule",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedNewMD",
+			"type": "entity",
+			"dataclass": "Dish",
+			"from": "newSectionDishes",
+			"namespace": "menuSectionModule",
+			"initialValue": "first",
+			"depth": null
+		}
+	],
+	"Qodly": [
+		{
+			"id": "Location",
+			"dataType": "object",
+			"type": "scalar",
+			"namespace": "Qodly",
+			"initialValue": {
+				"urlQuery": [],
+				"urlPath": {},
+				"Anchor": ""
+			},
+			"schema": {
+				"type": "object",
+				"properties": [
+					{
+						"name": "urlQuery",
+						"type": "array",
+						"initialValue": []
+					},
+					{
+						"name": "urlPath",
+						"type": "object",
+						"initialValue": {}
+					},
+					{
+						"name": "Anchor",
+						"type": "string",
+						"initialValue": ""
+					}
+				]
+			}
+		}
+	]
+}

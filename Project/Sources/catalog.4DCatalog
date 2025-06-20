@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="Restaurant Manager" uuid="DDB990E407F17B47A40EBC39B1E3FCE8" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="MenuSection" uuid="B6212E41FCA341D6AA9FC937CEF42593" id="1">
+		<field name="UUID" uuid="ACF3BD9951424B5AA29CFA630ABF2E2E" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="C58A94779CA148E2BF30718C0F37B743" type="10" id="2"/>
+		<field name="description" uuid="56E67407ACE546BB8EC7C5DEBCC0B8A3" type="10" id="3"/>
+		<primary_key field_name="UUID" field_uuid="ACF3BD9951424B5AA29CFA630ABF2E2E"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="41" green="219" blue="37" alpha="255"/>
+				<coordinates left="1842.5028076172" top="23.452453613281" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Dish" uuid="5329181CC72642698808CAC14D34595F" id="2">
+		<field name="UUID" uuid="C7C5789D910D44CF9B281C9BD86033DB" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="90CBF7DC678044B3A2EE49BCEAACEA58" type="10" id="2"/>
+		<field name="description" uuid="E5F4533525DF43089F142F142D87A636" type="10" id="3"/>
+		<field name="image" uuid="086A02F331A54D8A82656C670669D9A0" type="10" id="4"/>
+		<field name="price" uuid="4E6B1E89E87347089CF567DD0EF7D23C" type="6" id="5"/>
+		<field name="macros" uuid="446C1F58E2D84A06B59F5896E8BA7E47" type="21" blob_switch_size="2147483647" id="6"/>
+		<field name="availability" uuid="BD08FE0994A74D79AB823AA8075893EF" type="1" id="7"/>
+		<field name="section_ID" uuid="83983EDE4F284858B701097EE79C6255" type="10" id="10"/>
+		<primary_key field_name="UUID" field_uuid="C7C5789D910D44CF9B281C9BD86033DB"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="10">
+				<color red="41" green="219" blue="37" alpha="255"/>
+				<coordinates left="1397.169921875" top="106.97564697266" width="291" height="272.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Order" uuid="9443E6587FF94251A62120A1CFA522EB" id="3">
+		<field name="UUID" uuid="EEB0215083E0455CB0D3BC06E046D365" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="orderDate" uuid="F81DEBF96FB947EC8B48F35234AAADF8" type="8" id="3"/>
+		<field name="status" uuid="2DD4991076C5425B81D2D44A6E797DDF" type="10" id="4"/>
+		<field name="ordererFullName" uuid="E01D9FC1BE7F4DF2B651BD8D47C14B2C" type="10" id="5"/>
+		<field name="type" uuid="FCB56B2DCC6F4BDEB498E217501BCE76" type="10" id="6"/>
+		<field name="contactInfo" uuid="1B0A83A976404F28A5553C5D99B5CFC5" type="21" blob_switch_size="2147483647" id="7"/>
+		<field name="table_ID" uuid="0390DDA0347C4D24883F8A1969E64916" type="10" id="8"/>
+		<field name="facture_ID" uuid="976901BB6B5141858DFB95ECEC37EFBF" type="10" id="9"/>
+		<field name="orderNumber" uuid="A6BBF84C84664F0696E6C0698D7AF0F1" type="6" unique="true" autosequence="true" not_null="true" id="10"/>
+		<field name="orderingHour" uuid="1C6523874C604F48AA7BADDA68574206" type="9" id="11"/>
+		<field name="waiter_ID" uuid="0E99CCBCCBF945849A484CC4FBBF4E50" type="10" id="12"/>
+		<field name="ordererAddress" uuid="E571B6342BCE4FD1A3A22B669DB160B1" type="10" id="13"/>
+		<primary_key field_name="UUID" field_uuid="EEB0215083E0455CB0D3BC06E046D365"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="231" green="51" blue="81" alpha="255"/>
+				<coordinates left="527.27111816406" top="463.46160888672" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Supplier" uuid="F1CB1C9871BF44FDBE35040FD1097875" id="4">
+		<field name="UUID" uuid="54961620E84F4CBA81CEC668CFBD15A4" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="5448520286DB4B7CB479E4B112A64730" type="10" id="3"/>
+		<field name="address" uuid="0DAB68E81AE24882A153EB923AFDA514" type="10" id="4"/>
+		<field name="contactInfo" uuid="F4AC1943E7604C3894AD99E70DCB6E0F" type="21" blob_switch_size="2147483647" id="5"/>
+		<field name="description" uuid="120B0C280F34484BAF584EC7797FA11B" type="10" id="6"/>
+		<primary_key field_name="UUID" field_uuid="54961620E84F4CBA81CEC668CFBD15A4"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="59" green="130" blue="246" alpha="255"/>
+				<coordinates left="3131.7058105469" top="142.76141357422" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ProductSupplier" uuid="78712AC2BD4B44D9B200B495B01004F7" id="5">
+		<field name="UUID" uuid="71D70E56C5EC447ABBE6BB4A2ABF43CC" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="product_ID" uuid="6C4B0519BA79434DB5AB758CAA5FA5B9" type="10" id="2"/>
+		<field name="supplier_ID" uuid="07B6685814F545DB90E8F69290E3C2AF" type="10" id="3"/>
+		<primary_key field_name="UUID" field_uuid="71D70E56C5EC447ABBE6BB4A2ABF43CC"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="59" green="130" blue="246" alpha="255"/>
+				<coordinates left="2679.0236816406" top="300.60137939453" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="DishProduct" uuid="A17B90CC5FF145788C76B2B2C723B012" id="6">
+		<field name="UUID" uuid="EDF629722C21430A88847839E1392AAE" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="quantity" uuid="89C6015FC70647D4B8CA3D007B7AEB4C" type="6" id="2"/>
+		<field name="product_ID" uuid="A2ED8A36314F43808D754DCB7BB3CBF0" type="10" id="3"/>
+		<field name="dish_ID" uuid="70C2AD199B8346FC942290628D474519" type="10" id="4"/>
+		<primary_key field_name="UUID" field_uuid="EDF629722C21430A88847839E1392AAE"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="41" green="219" blue="37" alpha="255"/>
+				<coordinates left="1835.0352783203" top="422.22085571289" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Product" uuid="14A6451666C645FB9858BD2D7797D4E4" id="7">
+		<field name="UUID" uuid="87F86C6152B94A2FBAE428C922FF236C" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="9E1979E719794CBC936CB33646BA8422" type="10" id="2"/>
+		<field name="price" uuid="BEAFEF1AD06D4193A2CC7A893A25EA3C" type="6" id="3"/>
+		<field name="availableQuantity" uuid="4F0BA559A0AC4136B4F3FEC82E026B14" type="6" id="4"/>
+		<field name="expirationDate" uuid="5A79E62EAF1C47E0AE0A80B54A668B4B" type="8" id="5"/>
+		<field name="category_ID" uuid="201D105807AB42C1B2E9E0FD76C608F2" type="10" id="8"/>
+		<field name="barCode" uuid="693BA7D3F7674C68A01F5F3C23E7B2D5" type="10" id="9"/>
+		<field name="image" uuid="7B1019B6FBF3425199F6FF81E58572B0" type="10" id="10"/>
+		<primary_key field_name="UUID" field_uuid="87F86C6152B94A2FBAE428C922FF236C"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="41" green="219" blue="37" alpha="255"/>
+				<coordinates left="2265.2788085938" top="1.5121459960938" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Category" uuid="FD651F72FC004D84A4EB7D73CA1844F7" id="8">
+		<field name="UUID" uuid="E75EF33C91EE4BFC932D5BBBB47867C3" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="D4F8D6B2E7F4461EB182C8D63624FB89" type="10" id="2"/>
+		<primary_key field_name="UUID" field_uuid="E75EF33C91EE4BFC932D5BBBB47867C3"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="59" green="130" blue="246" alpha="255"/>
+				<coordinates left="2780.5678710938" top="0" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="OrderDish" uuid="D61FCB73CEB342E688B6AA063FBFE07F" id="9">
+		<field name="UUID" uuid="9C187CCACEA24340B1FE133448DD3314" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="dish_ID" uuid="F6D7D6BEA15F4B4D82608F6FF5E53BF8" type="10" id="2"/>
+		<field name="order_ID" uuid="A72E384542B84EABACA26B47E678A03C" type="10" id="3"/>
+		<field name="quantity" uuid="3483D038F50C4A5AAD45B11CF0347F90" type="6" id="4"/>
+		<primary_key field_name="UUID" field_uuid="9C187CCACEA24340B1FE133448DD3314"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="231" green="51" blue="81" alpha="255"/>
+				<coordinates left="1017.1489868164" top="142.26928710938" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Table" uuid="22449746A2EB40E1B819B99A252026C4" id="10">
+		<field name="UUID" uuid="4D991BDC94DE40F4AF741018CA24690D" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="numberTable" uuid="7B56EEEFD8DF4AF3B06A5969403723AE" type="6" id="2"/>
+		<field name="capacity" uuid="836DEEBC2E704319AE51CE192BD7337B" type="6" id="3"/>
+		<field name="status" uuid="FCE1427C74224520915078D83EA5FD96" type="10" id="4"/>
+		<primary_key field_name="UUID" field_uuid="4D991BDC94DE40F4AF741018CA24690D"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="13">
+				<color red="231" green="51" blue="81" alpha="255"/>
+				<coordinates left="1015.1278076172" top="451.64770507812" width="390" height="328.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Facture" uuid="DC1CC6780E224E7DA58FCAD77CCCD865" id="11">
+		<field name="UUID" uuid="19435FD4AEAD4DA1AD5ED5496D895E5B" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="dateFacture" uuid="8122D2EDDD1844C7908D864AA83086A2" type="8" id="2"/>
+		<field name="paymentMode" uuid="B503C370541F415C933A5FB72450AF16" type="10" id="3"/>
+		<field name="status" uuid="6A0435864E6D4697BA15DA4E716D30CA" type="10" id="4"/>
+		<primary_key field_name="UUID" field_uuid="19435FD4AEAD4DA1AD5ED5496D895E5B"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="231" green="51" blue="81" alpha="255"/>
+				<coordinates left="977.65411376953" top="936.96520996094" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="User" uuid="AF3DDF4007064E6796DAEE71680F566C" id="12">
+		<field name="UUID" uuid="27967332381F45319B18226E58E7F976" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="firstName" uuid="48BF49727ACDD7438D67F7F8D05340F4" type="10" limiting_length="255" id="3"/>
+		<field name="avatar" uuid="E68FA73B0C1D47218FEA1108B9CCC267" type="10" id="4"/>
+		<field name="lastName" uuid="FABF89BB42C5494281E6F6DDB57A844C" type="10" limiting_length="255" id="6">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="mail" uuid="8CA9C844EA8BBF409217466E48526AF7" type="10" limiting_length="255" id="7">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="role" uuid="EA1AAD6D6571004D89B154371EFA7C1D" type="10" limiting_length="255" id="8">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="password" uuid="FDD545B6D8E16A41A8B1B1B5BE5CEA74" type="10" limiting_length="255" id="9">
+			<field_extra multi_line="false"/>
+		</field>
+		<primary_key field_name="UUID" field_uuid="27967332381F45319B18226E58E7F976"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="13">
+				<color red="245" green="231" blue="23" alpha="255"/>
+				<coordinates left="66.835571289062" top="496.18548583984" width="312" height="321.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Waiter" uuid="720729C9E4F54D1CB13FC3C0AF4B6F9F" id="13">
+		<field name="UUID" uuid="C59E4AD9D3724CD1ADA7A24AD19CA3CF" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="user_ID" uuid="FD2B0EAEC5FE44A78480A299FA361340" type="10" id="2"/>
+		<primary_key field_name="UUID" field_uuid="C59E4AD9D3724CD1ADA7A24AD19CA3CF"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="245" green="231" blue="23" alpha="255"/>
+				<coordinates left="0" top="943.34698486328" width="200" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="(Table_1)" uuid="0B8901F21B597C45A1BF026978198EBC" id="14" hide_in_REST="true">
+		<field name="ID" uuid="14C8E247B75ECB4E8A15C4800B40C449" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<primary_key field_name="ID" field_uuid="14C8E247B75ECB4E8A15C4800B40C449"/>
+		<table_extra trashed="true">
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="40" top="40" width="120" height="168.865234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="89CEEE15B93D4DCB8FD6C9C5D4F382AF" name_Nto1="section" name_1toN="dishes" state="1">
+		<related_field kind="source">
+			<field_ref uuid="83983EDE4F284858B701097EE79C6255" name="section_ID">
+				<table_ref uuid="5329181CC72642698808CAC14D34595F" name="Dish"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="ACF3BD9951424B5AA29CFA630ABF2E2E" name="UUID">
+				<table_ref uuid="B6212E41FCA341D6AA9FC937CEF42593" name="MenuSection"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="CFD341EA7EE140A3BB7B4DBC88745FB4" name_Nto1="dish" name_1toN="dishProducts" state="1">
+		<related_field kind="source">
+			<field_ref uuid="70C2AD199B8346FC942290628D474519" name="dish_ID">
+				<table_ref uuid="A17B90CC5FF145788C76B2B2C723B012" name="DishProduct"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C7C5789D910D44CF9B281C9BD86033DB" name="UUID">
+				<table_ref uuid="5329181CC72642698808CAC14D34595F" name="Dish"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="7F3EFF04D3C94EFF8CB55DDD2F47CAAE" name_Nto1="dish" name_1toN="orderDishes" state="1">
+		<related_field kind="source">
+			<field_ref uuid="F6D7D6BEA15F4B4D82608F6FF5E53BF8" name="dish_ID">
+				<table_ref uuid="D61FCB73CEB342E688B6AA063FBFE07F" name="OrderDish"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C7C5789D910D44CF9B281C9BD86033DB" name="UUID">
+				<table_ref uuid="5329181CC72642698808CAC14D34595F" name="Dish"/>
+			</field_ref>
+		</related_field>
+		<relation_extra>
+			<editor_relation_info>
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="921D7B0EBDF144F0A950EBD60FC406BD" name_Nto1="order" name_1toN="orderDishes" state="1">
+		<related_field kind="source">
+			<field_ref uuid="A72E384542B84EABACA26B47E678A03C" name="order_ID">
+				<table_ref uuid="D61FCB73CEB342E688B6AA063FBFE07F" name="OrderDish"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="EEB0215083E0455CB0D3BC06E046D365" name="UUID">
+				<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="7B9CCA8FA94449BEBF590A02030DABE6" name_Nto1="supplier" name_1toN="productSuppliers" state="1">
+		<related_field kind="source">
+			<field_ref uuid="07B6685814F545DB90E8F69290E3C2AF" name="supplier_ID">
+				<table_ref uuid="78712AC2BD4B44D9B200B495B01004F7" name="ProductSupplier"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="54961620E84F4CBA81CEC668CFBD15A4" name="UUID">
+				<table_ref uuid="F1CB1C9871BF44FDBE35040FD1097875" name="Supplier"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="0F737B71C5914580A890EE49DB052671" name_Nto1="product" name_1toN="productSuppliers" state="1">
+		<related_field kind="source">
+			<field_ref uuid="6C4B0519BA79434DB5AB758CAA5FA5B9" name="product_ID">
+				<table_ref uuid="78712AC2BD4B44D9B200B495B01004F7" name="ProductSupplier"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="87F86C6152B94A2FBAE428C922FF236C" name="UUID">
+				<table_ref uuid="14A6451666C645FB9858BD2D7797D4E4" name="Product"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="1748D86932F34565A51C88A30055CCF6" name_Nto1="product" name_1toN="dishProducts" state="1">
+		<related_field kind="source">
+			<field_ref uuid="A2ED8A36314F43808D754DCB7BB3CBF0" name="product_ID">
+				<table_ref uuid="A17B90CC5FF145788C76B2B2C723B012" name="DishProduct"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="87F86C6152B94A2FBAE428C922FF236C" name="UUID">
+				<table_ref uuid="14A6451666C645FB9858BD2D7797D4E4" name="Product"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="51300E4449B04DE2B4B3D475B1CAEBBE" name_Nto1="category" name_1toN="products" state="1">
+		<related_field kind="source">
+			<field_ref uuid="201D105807AB42C1B2E9E0FD76C608F2" name="category_ID">
+				<table_ref uuid="14A6451666C645FB9858BD2D7797D4E4" name="Product"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E75EF33C91EE4BFC932D5BBBB47867C3" name="UUID">
+				<table_ref uuid="FD651F72FC004D84A4EB7D73CA1844F7" name="Category"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="3891D695638D4DC388E9E2BEC4E1A189" name_Nto1="table" name_1toN="orders" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0390DDA0347C4D24883F8A1969E64916" name="table_ID">
+				<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4D991BDC94DE40F4AF741018CA24690D" name="UUID">
+				<table_ref uuid="22449746A2EB40E1B819B99A252026C4" name="Table"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="F72CB8BC08EC4C8C917C75DE3C3070C3" name_Nto1="facture" name_1toN="orders" state="1">
+		<related_field kind="source">
+			<field_ref uuid="976901BB6B5141858DFB95ECEC37EFBF" name="facture_ID">
+				<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="19435FD4AEAD4DA1AD5ED5496D895E5B" name="UUID">
+				<table_ref uuid="DC1CC6780E224E7DA58FCAD77CCCD865" name="Facture"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="9D5513D7B76F4F32A8C3F9829629F2C4" name_Nto1="user" name_1toN="waiters" state="1">
+		<related_field kind="source">
+			<field_ref uuid="FD2B0EAEC5FE44A78480A299FA361340" name="user_ID">
+				<table_ref uuid="720729C9E4F54D1CB13FC3C0AF4B6F9F" name="Waiter"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="27967332381F45319B18226E58E7F976" name="UUID">
+				<table_ref uuid="AF3DDF4007064E6796DAEE71680F566C" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="941AB25FE6A14DF3B0A2472B43D013A2" name_Nto1="waiter" name_1toN="orders" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0E99CCBCCBF945849A484CC4FBBF4E50" name="waiter_ID">
+				<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C59E4AD9D3724CD1ADA7A24AD19CA3CF" name="UUID">
+				<table_ref uuid="720729C9E4F54D1CB13FC3C0AF4B6F9F" name="Waiter"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="06ACA4D0C496CC4B8BC89884B5D875AD" type="1">
+		<field_ref uuid="EDF629722C21430A88847839E1392AAE" name="UUID">
+			<table_ref uuid="A17B90CC5FF145788C76B2B2C723B012" name="DishProduct"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="1ABBFAC66BEF0E4F8BDF9890945F9245" type="1">
+		<field_ref uuid="9C187CCACEA24340B1FE133448DD3314" name="UUID">
+			<table_ref uuid="D61FCB73CEB342E688B6AA063FBFE07F" name="OrderDish"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="20866E11BA419A4085D39B717034862B" type="1">
+		<field_ref uuid="ACF3BD9951424B5AA29CFA630ABF2E2E" name="UUID">
+			<table_ref uuid="B6212E41FCA341D6AA9FC937CEF42593" name="MenuSection"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="24F6926E8A9B9B44A896BCB3E7EC695F" type="1">
+		<field_ref uuid="A6BBF84C84664F0696E6C0698D7AF0F1" name="orderNumber">
+			<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="49272B5D9FE910488B1F91F2C8483401" type="1">
+		<field_ref uuid="C7C5789D910D44CF9B281C9BD86033DB" name="UUID">
+			<table_ref uuid="5329181CC72642698808CAC14D34595F" name="Dish"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4E13175556693C43AC913FFB12FDCC03" type="1">
+		<field_ref uuid="C59E4AD9D3724CD1ADA7A24AD19CA3CF" name="UUID">
+			<table_ref uuid="720729C9E4F54D1CB13FC3C0AF4B6F9F" name="Waiter"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="71E187757C3D90449D6CE43155EB92B6" type="1">
+		<field_ref uuid="EEB0215083E0455CB0D3BC06E046D365" name="UUID">
+			<table_ref uuid="9443E6587FF94251A62120A1CFA522EB" name="Order"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="72C3E163AA31EF49851286E4E2E8CA31" type="1">
+		<field_ref uuid="4D991BDC94DE40F4AF741018CA24690D" name="UUID">
+			<table_ref uuid="22449746A2EB40E1B819B99A252026C4" name="Table"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="770A2266277A974B89845D7B22D611EA" type="1">
+		<field_ref uuid="19435FD4AEAD4DA1AD5ED5496D895E5B" name="UUID">
+			<table_ref uuid="DC1CC6780E224E7DA58FCAD77CCCD865" name="Facture"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="84911C632454874189682F2AF7ABA8BF" type="1">
+		<field_ref uuid="E75EF33C91EE4BFC932D5BBBB47867C3" name="UUID">
+			<table_ref uuid="FD651F72FC004D84A4EB7D73CA1844F7" name="Category"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="91E1A5F9CD037E48A41E145B6E4C9038" type="1">
+		<field_ref uuid="71D70E56C5EC447ABBE6BB4A2ABF43CC" name="UUID">
+			<table_ref uuid="78712AC2BD4B44D9B200B495B01004F7" name="ProductSupplier"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="A709D9B677FDDC43920524BF5F03B686" type="1">
+		<field_ref uuid="87F86C6152B94A2FBAE428C922FF236C" name="UUID">
+			<table_ref uuid="14A6451666C645FB9858BD2D7797D4E4" name="Product"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B2E5E38EF470E540A3446BC1B9D8B6EF" type="1">
+		<field_ref uuid="27967332381F45319B18226E58E7F976" name="UUID">
+			<table_ref uuid="AF3DDF4007064E6796DAEE71680F566C" name="User"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="EBA759A99D477248973201FB4C8BA964" type="7">
+		<field_ref uuid="14C8E247B75ECB4E8A15C4800B40C449" name="ID">
+			<table_ref uuid="0B8901F21B597C45A1BF026978198EBC" name="(Table_1)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="F3F18334246BF544A1F18E1CEC6B0995" type="1">
+		<field_ref uuid="54961620E84F4CBA81CEC668CFBD15A4" name="UUID">
+			<table_ref uuid="F1CB1C9871BF44FDBE35040FD1097875" name="Supplier"/>
+		</field_ref>
+	</index>
+</base>

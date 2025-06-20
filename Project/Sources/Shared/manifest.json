@@ -1,0 +1,51 @@
+{
+  "applicationName": "Restaurant manager",
+  "description": "This application groups the different implementation of the qodly studio components, events, as well as the usage of the integrated dialogs",
+  "details": "This demo application presents different qodly studio components usages in one place. Dive-in in this restauration management application.",
+  "visuals": [
+    {
+      "description": "Orders page",
+      "image": "/$shared/visuals/ordersPage.png"
+    },
+    {
+      "description": "New order dish dialog",
+      "image": "/$shared/visuals/orderDialog.png"
+    },
+    {
+      "description": "Dishes page",
+      "image": "/$shared/visuals/dishesPage.png"
+    },
+    {
+      "description": "Sections page",
+      "image": "/$shared/visuals/sectionsPage.png"
+    },
+    {
+      "description": "Suppliers page",
+      "image": "/$shared/visuals/suppliersPage.png"
+    },
+    {
+      "description": "New Product dialog",
+      "image": "/$shared/visuals/productDialog.png"
+    },
+    {
+      "description": "Inventory page",
+      "image": "/$shared/visuals/inventoryPage.png"
+    },
+    {
+      "description": "Upload picture dialog",
+      "image": "/$shared/visuals/uploadPicDialog.png"
+    }
+  ],
+  "logo": {
+    "small": "logo_small_path",
+    "large": "/$shared/logos/Q-2.svg"
+  },
+  "qodlyVersion": "all",
+  "author": {
+    "name": "Qodly",
+    "url": "https://qodly.com/"
+  },
+  "category": "Qodly starters",
+  "language": "English",
+  "version": "1.1.0"
+}
