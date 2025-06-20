@@ -1,0 +1,546 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": [
+			{
+				"name": "demoButton2",
+				"content": "self {\n\tcursor: pointer;\n  \tbackground-image: linear-gradient(to right, #0C356A ,rgb(88, 99, 246));\n}\nself:hover {\n\topacity: 0.8;\n}\nself:active {\n\topacity: 1;\n}",
+				"parentId": null,
+				"id": "fJAmpdtGmbsmUUIeu-WaM"
+			}
+		]
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"display": "flex",
+					"flexDirection": "column"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"7ByGBZxQct"
+			],
+			"linkedNodes": {}
+		},
+		"7ByGBZxQct": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"height": "100%",
+					"borderRadius": "10px",
+					"gap": "6px"
+				},
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"-W4-FJo84M",
+				"LLZSBEO5Tt"
+			],
+			"linkedNodes": {}
+		},
+		"-W4-FJo84M": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"gap": "10px",
+					"alignItems": "start",
+					"justifyContent": "flex-start",
+					"width": "20%",
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px"
+				},
+				"iterableChild": true,
+				"classNames": [
+					"flexGrow"
+				]
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7ByGBZxQct",
+			"hidden": false,
+			"nodes": [
+				"-cX1CI2CPf"
+			],
+			"linkedNodes": {}
+		},
+		"-cX1CI2CPf": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"backgroundColor": "#eaefeea3",
+					"borderRadius": "10px",
+					"display": "flex",
+					"flexDirection": "column",
+					"justifyContent": "center",
+					"alignItems": "center",
+					"gap": "12px"
+				},
+				"classNames": [
+					"flexGrow"
+				],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "-W4-FJo84M",
+			"hidden": false,
+			"nodes": [
+				"eujjrDKa1M",
+				"soiGpJvucV",
+				"wUvF4RPjce",
+				"Zuu7Tp8YYH"
+			],
+			"linkedNodes": {}
+		},
+		"eujjrDKa1M": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Home",
+				"classNames": [
+					"demoButton2"
+				],
+				"events": [
+					{
+						"type": "navigation",
+						"id": "dpz62Stv3uYywUDXa8yDGb",
+						"events": [
+							"onclick"
+						],
+						"externalLink": false,
+						"isHardCoded": true,
+						"target": "Home",
+						"parent": "same-tab"
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"borderRadius": "20px",
+					"width": "100%",
+					"height": "60px",
+					"justifyContent": "center",
+					"alignItems": "center"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "-cX1CI2CPf",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "HLVEPjjA6B"
+			}
+		},
+		"HLVEPjjA6B": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-house",
+				"style": {
+					"marginRight": "6px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "eujjrDKa1M",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"wUvF4RPjce": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontSize": "1rem",
+					"textDecorationLine": "none"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "-cX1CI2CPf",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"LLZSBEO5Tt": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"display": "flex",
+					"flexDirection": "column",
+					"width": "80%",
+					"borderWidth": "5px",
+					"borderColor": "#eaefeea3",
+					"borderRadius": "10px"
+				},
+				"classNames": [
+					"flexGrow"
+				],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7ByGBZxQct",
+			"hidden": false,
+			"nodes": [
+				"kQDn1IX1gz",
+				"rzumquQx8-"
+			],
+			"linkedNodes": {}
+		},
+		"kQDn1IX1gz": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"textAlign": "justify",
+					"display": "block",
+					"backgroundColor": "#eaefeea3"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "LLZSBEO5Tt",
+			"hidden": false,
+			"nodes": [
+				"OoGtRye5pH"
+			],
+			"linkedNodes": {}
+		},
+		"OoGtRye5pH": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "Different parts covered in the app:"
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "\t- Use of matrices and different display components to show the entity selections and displaying an in-dept look to view the selected element's details."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "\t- Navigation throught different webforms."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "\t- Using modals to display dialogs."
+							}
+						]
+					},
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "\t- Roles and privileges management."
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontWeight": "500"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "kQDn1IX1gz",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"rzumquQx8-": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"webform": "homePage",
+				"style": {
+					"width": "100%",
+					"height": "500px",
+					"borderRadius": "10px",
+					"overflow": "visible"
+				},
+				"classNames": [
+					"flexGrow"
+				]
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "LLZSBEO5Tt",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"soiGpJvucV": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Go to app",
+				"classNames": [
+					"demoButton2"
+				],
+				"events": [
+					{
+						"type": "navigation",
+						"id": "wNKAymYHjNd857EPAFbjaE",
+						"events": [
+							"onclick"
+						],
+						"externalLink": false,
+						"isHardCoded": true,
+						"target": "homePage",
+						"parent": "same-tab"
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"borderRadius": "20px",
+					"width": "100%",
+					"height": "60px",
+					"justifyContent": "center",
+					"alignItems": "center"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "-cX1CI2CPf",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "-DGr5qs1Xd"
+			}
+		},
+		"-DGr5qs1Xd": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-brands fa-windows",
+				"style": {
+					"marginRight": "6px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "soiGpJvucV",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"Zuu7Tp8YYH": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "The ",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							},
+							{
+								"bold": true,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "Restaurant Manager application"
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": " is a robust web application designed specifically for "
+							},
+							{
+								"italic": true,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "restaurant managers"
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": ", "
+							},
+							{
+								"italic": true,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "chefs "
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "and "
+							},
+							{
+								"italic": true,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "waiters"
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": ", offering seamless control over various aspects of their establishment. This user-friendly platform enables efficient orders management, streamlined menus updates, meticulous dish oversight, and precise stock monitoring. "
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"textAlign": "start"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "-cX1CI2CPf",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

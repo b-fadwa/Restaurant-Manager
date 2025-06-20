@@ -1,0 +1,82 @@
+{
+	"classes": [
+		{
+			"name": "visibility",
+			"content": "self {\ndisplay: none !important;\n}",
+			"parentId": null,
+			"id": "6pExjPTU63uCgVSRGmF3_"
+		},
+		{
+			"name": "flexGrow",
+			"content": "self {\nflex-grow: 1;\n}",
+			"parentId": null,
+			"id": "OiPaZIj-xtt5ON5bgNg8g"
+		},
+		{
+			"name": "navButtonColor",
+			"content": "self {\n\tbackground-color: #fff !important;\n\tcolor: #181818 !important;\n}\n\nself .fd-icon{\n\tbackground-color: #181818 !important;\n}",
+			"parentId": null,
+			"id": "oMkAyFzGy_Z95qGfnez_v"
+		},
+		{
+			"name": "matrixBg",
+			"content": "self .FdVirtualGrid > div .selected { \n\tbackground-color:transparent !important;\n}\nself .FdVirtualGrid > div :hover { \n\tbackground-color:transparent;\n}\nself .FdVirtualGrid > div .selected > div >div{ \n\tbackground-color: #F1D5BB !important;\n}",
+			"parentId": null,
+			"id": "b2vgZk67ED0k-II39Pnlm"
+		},
+		{
+			"name": "breakWord",
+			"content": "self {\n  word-break: break-all !important;\n\t/* inline-size: min-content !important; */\n}",
+			"parentId": null,
+			"id": "CBf606bNkDwPhx6uuprMh"
+		},
+		{
+			"name": "orderStatus",
+			"content": "/* to be updated */\nself:has(p span[title=\"Ready\"]){ \n\tbackground-color: #E21D1D !important;\n}\nself:has(p span[title=\"In Progress\"]){ \n\tbackground-color:#17AFB5 !important;\n}\nself:has(p span[title=\"Delivered\"]){ \n\tbackground-color:#800080 !important;\n}\nself:has(p span[title=\"Placed\"]){ \n\tbackground-color: #717C89 !important;\n}\n/* self:has(p span[title=\"Preparing\"]){ \n\tcolor: #FFA500 !important;\n}\nself:has(p span[title=\"In Progress\"]) + div:has(p span[title=\"Take Order\"]){ \n\tdisplay: none !important;\n}\nself:has(p span[title=\"Ready\"]){ \n\tcolor: #800080 !important;\n}\nself:has(p span[title=\"Delivered\"]){ \n\tcolor: #17AFB5 !important;\n}\nself:has(p span[title=\"Canceled\"]){ \n\tcolor: #E21D1D !important;\n} */",
+			"parentId": null,
+			"id": "9tnuiM2xoW5bNDMPvJe8_"
+		},
+		{
+			"name": "tabCss",
+			"content": "self div[role=\"tablist\"] {\n\tjustify-content: center;\n\tcolor: #CCCCCC;\n\tfont-size: 1.5vw;\n\t/* display: flex;\n\tflex-direction: column; */\n\t/* width:10%; */\n}\n\n/* self div[role=\"tabpanel\"]{ */\n\t/* justify-content: center; */\n\t/* color: #CCCCCC; */\n\t/* display: flex; */\n\t/* flex-direction: column; */\n\t/* background-color: purple !important; */\n\t/* flex-grow: 1; */\n/* } */\n\nself button[data-headlessui-state=\"selected\"]{\n\tcolor: #000000;\n}\n\nself button[data-headlessui-state=\"selected\"]:after {\n\tbackground-color: #000000;\n}\n\n/* self button{\n\twidth:100%;\n\theight:25%; \n\t/* background-color: aqua; *\n} */\n\n/* self div[role=\"tablist\"] {\n\t/* justify-content: center; */\n\t/* color: #CCCCCC; \n\tdisplay: flex;\n\tflex-direction: column;\n\twidth:30%;\n\tbackground-color: pink !important;\n\talign-items: center;\n\tflex-grow: 1;\n} */\n\n/* self div[role=\"tabpanel\"]{\n\tjustify-content: center;\n\tcolor: #CCCCCC;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground-color: purple !important;\n\t/* flex-grow: 1; \n} */\n\n/* self button{\n\twidth:100%;\n\t/* height:20%; \n\tbackground-color: aqua;\n}*/\n/* \nself button[data-headlessui-state=\"selected\"]{\n\tcolor: #000000;\n}\n\nself button[data-headlessui-state=\"selected\"]:after {\n\tbackground-color: #000000;\n} */",
+			"parentId": null,
+			"id": "AIQNpS0lVRZVHjaISXtWa"
+		},
+		{
+			"name": "delButton",
+			"content": "self:hover {\n\tcolor: rgb(234, 34, 34) !important;\n}",
+			"parentId": null,
+			"id": "cncoa7KK0KK7E514T4C-4"
+		},
+		{
+			"name": "maxContent",
+			"content": "self {\nwidth: max-content !important;\n}",
+			"parentId": null,
+			"id": "r52ZeVgGiCP58FYYm6myh"
+		},
+		{
+			"name": "requiredField",
+			"content": "self .fd-selectbox__toggle_button{\n\tborder: 1px solid red !important;\n}\nself input{\n\tborder: 1px solid red !important;\n}\nself >label>span{\n\tcolor: red !important;\n}\nself textarea{\n\tborder: 1px solid red !important;\n}",
+			"parentId": null,
+			"id": "ZBU_E8vx6TyaUf5cu3BTe"
+		},
+		{
+			"name": "byDefaultAvatar",
+			"content": "self > img[src=''] {\n  content:url(/$Shared/assets/images/user.jpg);\n}",
+			"parentId": null,
+			"id": "35VrS8tViKeJZ4UiZeu1i"
+		},
+		{
+			"name": "byDefaultDish",
+			"content": "self > img[src=''] {\n  content:url(/$Shared/assets/images/food.jpg);\n}",
+			"parentId": null,
+			"id": "2UM59vVSDCfeb-WggzC1I"
+		},
+		{
+			"name": "text-overflow-2",
+			"content": "self {\n\tdisplay: -webkit-box;\n    -webkit-box-orient: vertical;\n    overflow: hidden;\n    -webkit-line-clamp: 1; /* Restrict to two lines */\n\ttext-overflow: ellipsis;\n    max-width: 100%;\n}",
+			"parentId": null,
+			"id": "Ez5E5AgX3maM9iOK7rNOz"
+		}
+	]
+}
