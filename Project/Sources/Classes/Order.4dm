@@ -1,76 +1,75 @@
 Class extends DataClass
 
-exposed Function filterByDate($input : Integer) : cs:C1710.OrderSelection
+exposed Function filterByDate($input : Integer) : cs.OrderSelection
 	var $monthAtt : Object
-	TRACE:C157
 	Case of 
 		: ($input=1)
-			return This:C1470.query("orderDate = :1"; Current date:C33())
+			return This.query("orderDate = :1"; Current date())
 		: ($input=2)
-			return This:C1470.query("orderDate >= :1 and orderDate <= :2"; Current date:C33(); Add to date:C393(Current date:C33(); 0; 0; 7))
+			return This.query("orderDate >= :1 and orderDate <= :2"; Current date(); Add to date(Current date(); 0; 0; 7))
 		: ($input=3)
-			$monthAtt:=Formula:C1597((Month of:C24(This:C1470.orderDate):=Month of:C24(Current date:C33())) && (Year of:C25(This:C1470.orderDate):=Year of:C25(Current date:C33())))
-			return This:C1470.query($monthAtt)
+			$monthAtt:=Formula((Month of(This.orderDate):=Month of(Current date())) && (Year of(This.orderDate):=Year of(Current date())))
+			return This.query($monthAtt)
 		: ($input=4)
-			return This:C1470.query("orderDate >= :1 and orderDate <= :2"; Add to date:C393(Current date:C33(); 0; 0; -7); Current date:C33())
+			return This.query("orderDate >= :1 and orderDate <= :2"; Add to date(Current date(); 0; 0; -7); Current date())
 		Else 
+			// return this.all()
 	End case 
 	
 	
 	
-exposed Function filtering($dateSearch : Variant; $waiter : cs:C1710.WaiterEntity; $status : Variant) : cs:C1710.OrderSelection
-	var $orders : cs:C1710.OrderSelection
-	var $outputOrders : cs:C1710.OrderSelection
-	TRACE:C157
+exposed Function filtering($dateSearch : Variant; $waiter : cs.WaiterEntity; $status : Variant) : cs.OrderSelection
+	var $orders : cs.OrderSelection
+	var $outputOrders : cs.OrderSelection
 	Case of 
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && ($waiter#Null:C1517) && (($status#"") && ($status#Null:C1517)))
-			$orders:=This:C1470.filterByDate($dateSearch)
-			$outputOrders:=This:C1470.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
+		: ((($dateSearch#0) && ($dateSearch#Null)) && ($waiter#Null) && (($status#"") && ($status#Null)))
+			$orders:=This.filterByDate($dateSearch)
+			$outputOrders:=This.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
 			$orders:=$orders.and($outputOrders)
-			Web Form:C1735.setMessage("date+waiter+status "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($waiter#Null:C1517)))  //filtering by date and $waiter
-			$orders:=This:C1470.filterByDate($dateSearch)
-			$outputOrders:=This:C1470.query("waiter.user.fullName = :1"; $waiter.user.fullName)
+			Web Form.setMessage("date+waiter+status "+String($orders.length))
+		: ((($dateSearch#0) && ($dateSearch#Null)) && (($waiter#Null)))  //filtering by date and $waiter
+			$orders:=This.filterByDate($dateSearch)
+			$outputOrders:=This.query("waiter.user.fullName = :1"; $waiter.user.fullName)
 			$orders:=$orders.and($outputOrders)
-			Web Form:C1735.setMessage("date+waiter "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($status#"") && ($status#Null:C1517)))  //filtering by date and $status
-			$orders:=This:C1470.filterByDate($dateSearch)
-			$outputOrders:=This:C1470.query("status = :1"; $status)
+			Web Form.setMessage("date+waiter "+String($orders.length))
+		: ((($dateSearch#0) && ($dateSearch#Null)) && (($status#"") && ($status#Null)))  //filtering by date and $status
+			$orders:=This.filterByDate($dateSearch)
+			$outputOrders:=This.query("status = :1"; $status)
 			$orders:=$orders.and($outputOrders)
-			Web Form:C1735.setMessage("date+status "+String:C10($orders.length))
-		: (($waiter#Null:C1517) && (($status#"") && ($status#Null:C1517)))  //filtering by $waiter and $status
-			$orders:=This:C1470.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
-			Web Form:C1735.setMessage("status+waiter "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)))  //filtering by date
-			$orders:=This:C1470.filterByDate($dateSearch)
-			Web Form:C1735.setMessage("date "+String:C10($orders.length))
-		: ($waiter#Null:C1517)  //$waiter 
-			$orders:=This:C1470.query("waiter.user.fullName = :1"; $waiter.user.fullName)
-			Web Form:C1735.setMessage("waiter "+String:C10($orders.length))
-		: ((($status#"") && ($status#Null:C1517)))  //filtering by $status
-			$orders:=This:C1470.query("status = :1"; $status)
-			Web Form:C1735.setMessage("status "+String:C10($orders.length))
+			Web Form.setMessage("date+status "+String($orders.length))
+		: (($waiter#Null) && (($status#"") && ($status#Null)))  //filtering by $waiter and $status
+			$orders:=This.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
+			Web Form.setMessage("status+waiter "+String($orders.length))
+		: ((($dateSearch#0) && ($dateSearch#Null)))  //filtering by date
+			$orders:=This.filterByDate($dateSearch)
+			Web Form.setMessage("date "+String($orders.length))
+		: ($waiter#Null)  //$waiter 
+			$orders:=This.query("waiter.user.fullName = :1"; $waiter.user.fullName)
+			Web Form.setMessage("waiter "+String($orders.length))
+		: ((($status#"") && ($status#Null)))  //filtering by $status
+			$orders:=This.query("status = :1"; $status)
+			Web Form.setMessage("status "+String($orders.length))
 		Else 
-			$orders:=This:C1470.query("orderDate = :1"; Current date:C33())
-			Web Form:C1735.setMessage("nothing "+String:C10($orders.length))
-			ds:C1482.noData($orders.length; "toHideWhenNoData"; "toShowWhenNoData")
+			$orders:=This.query("orderDate = :1"; Current date())
+			Web Form.setMessage("nothing "+String($orders.length))
+			ds.noData($orders.length; "toHideWhenNoData"; "toShowWhenNoData")
 	End case 
 	return $orders
 	
 exposed Function cancelOrder($UUID : Text)
-	var $newOrder : cs:C1710.OrderEntity:=ds:C1482.Order.query("UUID = :1"; $UUID).first()
+	var $newOrder : cs.OrderEntity:=ds.Order.query("UUID = :1"; $UUID).first()
 	var $status : Object
-	var $orderDishes : cs:C1710.OrderDishSelection:=$newOrder.orderDishes
+	var $orderDishes : cs.OrderDishSelection:=$newOrder.orderDishes
 	If ($orderDishes.length#0)
 		$newOrder.orderDishes.drop()
 	End if 
 	$status:=$newOrder.drop()
 	If ($status.success)
-		ds:C1482.setCss("orderedDishes"; "visibility")
-		ds:C1482.setCss("newOrderTotal"; "visibility")
-		ds:C1482.setCss("orderTable"; "visibility")
-		ds:C1482.setCss("orderName"; "visibility")
-		Web Form:C1735.setMessage("Order canceled!")
+		ds.setCss("orderedDishes"; "visibility")
+		ds.setCss("newOrderTotal"; "visibility")
+		ds.setCss("orderTable"; "visibility")
+		ds.setCss("orderName"; "visibility")
+		Web Form.setMessage("Order canceled!")
 	Else 
-		Web Form:C1735.setError("Error!")
+		Web Form.setError("Error!")
 	End if 

@@ -1,6 +1,6 @@
 Class extends DataClass
 
-exposed function $search($search : text) : cs.MenuSectionSelection
+exposed function search($search : text) : cs.MenuSectionSelection
 	if ($search = null)
 		return this.all()
 	else 

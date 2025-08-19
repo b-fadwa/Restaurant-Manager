@@ -281,7 +281,7 @@
 			"displayName": "Stylebox",
 			"custom": {
 				"contentWidth": 555,
-				"contentHeight": 39
+				"contentHeight": 28
 			},
 			"parent": "FYiBdKqFdh",
 			"hidden": false,
@@ -461,7 +461,9 @@
 				"dataType": "string",
 				"moveable": false,
 				"placeholder": "Pasta, Pepper, ...",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -550,7 +552,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"eyePosition": "right",
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -573,7 +578,8 @@
 					"width": "100%",
 					"justifyContent": "flex-start",
 					"alignItems": "center",
-					"gap": "0px"
+					"gap": "0px",
+					"height": "30px"
 				},
 				"serverSideRef": "productPrice",
 				"iterableChild": true
@@ -658,7 +664,7 @@
 					"backgroundColor": "#ffffffff",
 					"borderRadius": "0px",
 					"width": "100%",
-					"height": "5vh",
+					"height": "100%",
 					"display": "block",
 					"flexWrap": "wrap",
 					"fontWeight": "500",
@@ -671,7 +677,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"eyePosition": "right",
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -804,7 +813,8 @@
 					"width": "100%",
 					"justifyContent": "flex-start",
 					"alignItems": "center",
-					"gap": "0px"
+					"gap": "0px",
+					"height": "30px"
 				},
 				"serverSideRef": "productQuantity",
 				"iterableChild": true
@@ -889,7 +899,7 @@
 					"backgroundColor": "#ffffffff",
 					"borderRadius": "0px",
 					"width": "100%",
-					"height": "5vh",
+					"height": "100%",
 					"display": "block",
 					"flexWrap": "wrap",
 					"fontWeight": "500",
@@ -902,7 +912,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"eyePosition": "right",
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1058,7 +1071,9 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},

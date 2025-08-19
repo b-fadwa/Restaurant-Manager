@@ -211,7 +211,8 @@
 							"type": "cs.OrderSelection",
 							"datasource": "OrdersModule:orders"
 						},
-						"feedback": false
+						"feedback": false,
+						"disabled": true
 					},
 					{
 						"type": "method",
@@ -251,7 +252,8 @@
 						"returns": {
 							"name": "result",
 							"type": "Variable"
-						}
+						},
+						"disabled": true
 					}
 				]
 			}
@@ -934,7 +936,8 @@
 					"fontSize": "1vw",
 					"height": "5vh",
 					"borderStyle": "none"
-				}
+				},
+				"showEmptyOption": true
 			},
 			"displayName": "Select",
 			"custom": {},
@@ -1040,7 +1043,84 @@
 			"props": {
 				"iterable": true,
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Order",
+						"events": [
+							"onselect"
+						],
+						"id": "gjZPZZmsKwUcmG5sSXXSde",
+						"method": "ds.Order.filtering",
+						"params": [
+							{
+								"name": "dateSearch",
+								"type": "variant",
+								"datasource": "orderTime",
+								"id": "8hPvZAKQ9DURXZMUTH6uBM"
+							},
+							{
+								"name": "waiter",
+								"type": "cs.WaiterEntity",
+								"datasource": "selectedWaiter",
+								"id": "k5gkrbzkD6GsrzHukJwdWj"
+							},
+							{
+								"name": "status",
+								"type": "variant",
+								"datasource": "statusFilter",
+								"id": "jMnH5guZ4YQtovoMq4qsyk"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "cs.OrderSelection",
+							"datasource": "OrdersModule:orders"
+						},
+						"feedback": false
+					},
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"onselect"
+						],
+						"id": "uFzGBTcZboMnhTZwyK7A8a",
+						"method": "ds.noData",
+						"params": [
+							{
+								"name": "selectionLength",
+								"type": "variant",
+								"datasource": "OrdersModule:orders.length",
+								"id": "nj6qwFF9NGV1XnzmWJfgsE"
+							},
+							{
+								"name": "toHidePart",
+								"type": "string",
+								"datasource": "",
+								"id": "t4NGmrWBoe4knaRF6ajCZV",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "toHideWhenNoData"
+							},
+							{
+								"name": "toShowPart",
+								"type": "string",
+								"datasource": "",
+								"id": "nPUgAQQ7tgY6x1GajA2YeE",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "toShowWhenNoData"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					}
+				],
 				"template": "{{ length }} items",
 				"rowsNumber": 5,
 				"datasource": "OrdersModule:waiters",
@@ -1237,7 +1317,8 @@
 					"borderStyle": "none"
 				},
 				"defaultValue": "@",
-				"datasource": "statusFilter"
+				"datasource": "statusFilter",
+				"showEmptyOption": true
 			},
 			"displayName": "Select",
 			"custom": {},
