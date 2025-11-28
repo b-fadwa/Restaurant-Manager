@@ -512,6 +512,13 @@
 	],
 	"Qodly": [
 		{
+			"id": "Title",
+			"dataType": "string",
+			"type": "scalar",
+			"namespace": "Qodly",
+			"initialValue": ""
+		},
+		{
 			"id": "Location",
 			"dataType": "object",
 			"type": "scalar",
@@ -538,6 +545,31 @@
 						"name": "Anchor",
 						"type": "string",
 						"initialValue": ""
+					}
+				]
+			}
+		},
+		{
+			"id": "UserLanguage",
+			"dataType": "object",
+			"type": "scalar",
+			"namespace": "Qodly",
+			"initialValue": {
+				"selected": {},
+				"supported": []
+			},
+			"schema": {
+				"type": "object",
+				"properties": [
+					{
+						"name": "selected",
+						"type": "object",
+						"initialValue": {}
+					},
+					{
+						"name": "supported",
+						"type": "array",
+						"initialValue": []
 					}
 				]
 			}

@@ -1,5 +1,6 @@
 {
 	"forceLogin": true,
+	"restrictedByDefault": false,
 	"permissions": {
 		"allowed": [
 			{

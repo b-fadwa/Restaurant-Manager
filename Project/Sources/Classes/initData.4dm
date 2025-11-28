@@ -200,7 +200,7 @@ Function generateTable()
 		$table:=ds.Table.new()
 		$table.capacity:=$item.capacity
 		$table.status:=$item.statut
-		$table.numberTable = item.numberTable
+		$table.numberTable := item.numberTable
 		$info:=$table.save()
 	End for each 
 	

@@ -45,44 +45,6 @@
 						},
 						"feedback": false,
 						"disabled": false
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onChange"
-						],
-						"id": "3Bu6RwWmhfaRnsRYc3PxD5",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "azW1xs6gzVBmVJxHq2miMV"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "",
-								"id": "pUoCYwnAUo36J67BRDbDc8",
-								"isHardCoded": true,
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "",
-								"id": "4VULf7JPqE4NrX7AtMx2kh",
-								"isHardCoded": true,
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						}
 					}
 				]
 			},
@@ -128,45 +90,6 @@
 							"datasource": "OrdersModule:orders"
 						},
 						"feedback": false
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onChange"
-						],
-						"id": "brZSMfmaAt6XXvspAzZyaR",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "ptyCKDW9MDPLWjck4Lh1qU"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "toHideWhenNoData",
-								"id": "7uBKPznyjo9uJYD8G94ZY3",
-								"isHardCoded": true,
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "toShowWhenNoData",
-								"id": "h4cmbLHZNWkSkHGSTJo2Xf",
-								"isHardCoded": true,
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"disabled": false
 					}
 				]
 			},
@@ -212,48 +135,7 @@
 							"datasource": "OrdersModule:orders"
 						},
 						"feedback": false,
-						"disabled": true
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onChange"
-						],
-						"id": "tgKHkipSRqRJRYMHMHLHRL",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "nj6qwFF9NGV1XnzmWJfgsE"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "",
-								"id": "t4NGmrWBoe4knaRF6ajCZV",
-								"isHardCoded": true,
-								"hardCodedType": "string",
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "",
-								"id": "nPUgAQQ7tgY6x1GajA2YeE",
-								"isHardCoded": true,
-								"hardCodedType": "string",
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"disabled": true
+						"disabled": false
 					}
 				]
 			}
@@ -294,6 +176,42 @@
 				"scope": "local",
 				"id": "IIuPQeBLp3f37YTjuxKDk"
 			}
+		],
+		"states": [
+			{
+				"label": "Base",
+				"id": "root"
+			},
+			{
+				"label": "noOrders",
+				"id": "pGS4Mt9MeBWTFSzkzRhwjC",
+				"conditions": {
+					"id": "dZdc5E1C8JpDbTq7qokDZU",
+					"type": "datasource",
+					"name": "condition",
+					"value": "0",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:orders.length",
+					"dsType": "long",
+					"op": "eq",
+					"dataType": "number"
+				}
+			},
+			{
+				"label": "ordersExist",
+				"id": "8HcrkUzTPH74XSrb6qqjqp",
+				"conditions": {
+					"id": "m6tLGobUn2f55V62vnknBR",
+					"type": "datasource",
+					"name": "condition",
+					"value": "0",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:orders.length",
+					"dsType": "long",
+					"op": "gt",
+					"dataType": "number"
+				}
+			}
 		]
 	},
 	"components": {
@@ -309,7 +227,7 @@
 						"type": "method",
 						"dataclass": "DataStore",
 						"events": [
-							"onload"
+							"oninit"
 						],
 						"id": "nKjWwVC5GpQkBYNwVxvsU8",
 						"method": "ds.returnCurrentDate",
@@ -320,80 +238,33 @@
 							"type": "Date",
 							"datasource": "Shared:currentDate"
 						},
-						"disabled": false
-					},
-					{
-						"type": "simple-action",
-						"id": "kwztGLCtW21kKopJyPLzDR",
-						"events": [
-							"onload"
-						],
-						"action": "query",
-						"datasource": {
-							"name": "orders",
-							"from": "",
-							"type": "entitysel",
-							"namespace": "OrdersModule"
-						},
-						"query": {
-							"query": "orderDate = :1",
-							"params": [
-								{
-									"id": "1GdxukJMT5iB1WPQ1W5QgC",
-									"datasource": "Shared:currentDate"
-								}
-							]
-						},
-						"feedback": {
-							"enabled": false
-						},
 						"disabled": false,
-						"actionType": "datasource"
+						"extra": {
+							"shortcuts": {
+								"onload": []
+							}
+						}
 					},
 					{
 						"type": "method",
-						"dataclass": "DataStore",
+						"dataclass": "Order",
 						"events": [
-							"onload"
+							"oninit"
 						],
-						"id": "v11GuVZX8NpVV2VduWwxPk",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "3Jj2U9YFinChFmXXVgRQNB"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "",
-								"id": "pk1qs3dQdeZdaxs3Mx3fU5",
-								"isHardCoded": true,
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "toShowWheNoData",
-								"id": "8uJXJsm371KnXVX6FyUqJK",
-								"isHardCoded": true,
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
+						"id": "aLq4XRjmTtGtq1HfmWVcXA",
+						"method": "ds.Order.getCurrentDateOrders",
+						"params": [],
 						"datasource": "",
+						"allowedOnHTTPGET": false,
 						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"disabled": false
+							"datasource": "OrdersModule:orders"
+						}
 					},
 					{
 						"type": "method",
 						"dataclass": "Waiter",
 						"events": [
-							"onload"
+							"oninit"
 						],
 						"id": "9nU9VGGFFWJdwMfNU1uAfB",
 						"method": "ds.Waiter.waiters",
@@ -405,7 +276,12 @@
 							"datasource": "OrdersModule:waiters"
 						},
 						"feedback": true,
-						"disabled": false
+						"disabled": false,
+						"extra": {
+							"shortcuts": {
+								"onload": []
+							}
+						}
 					}
 				],
 				"airyMode": false,
@@ -843,7 +719,18 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:pGS4Mt9MeBWTFSzkzRhwjC": {
+					"style": {
+						"backgroundColor": ""
+					}
+				},
+				"states:8HcrkUzTPH74XSrb6qqjqp": {
+					"style": {
+						"backgroundColor": ""
+					}
+				}
+			},
 			"parent": "BOcP6xzfKl",
 			"hidden": false,
 			"nodes": [
@@ -882,9 +769,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "By",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "By",
 				"deletable": true,
 				"style": {
 					"color": "#A2A1A1",
@@ -1253,18 +1141,18 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "By Status",
+				"classNames": [
+					"maxContent"
+				],
 				"events": [],
 				"moveable": false,
 				"deletable": true,
-				"text": "By Status",
 				"style": {
 					"color": "#A2A1A1",
 					"fontSize": "1vw",
 					"width": "45%"
-				},
-				"classNames": [
-					"maxContent"
-				]
+				}
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -1345,7 +1233,13 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:pGS4Mt9MeBWTFSzkzRhwjC": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "BOcP6xzfKl",
 			"hidden": false,
 			"nodes": [
@@ -2577,7 +2471,13 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:8HcrkUzTPH74XSrb6qqjqp": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "BOcP6xzfKl",
 			"hidden": false,
 			"nodes": [

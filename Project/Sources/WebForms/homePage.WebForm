@@ -834,7 +834,9 @@
 					"paddingRight": "4px",
 					"paddingBottom": "4px",
 					"paddingTop": "4px",
-					"paddingLeft": "4px"
+					"paddingLeft": "4px",
+					"width": "500px",
+					"height": "fit-content"
 				}
 			},
 			"displayName": "Dialog",
@@ -869,7 +871,7 @@
 			"parent": "RY1nlYXny5",
 			"hidden": false,
 			"nodes": [
-				"pd5eR2yFTI",
+				"TjJ49JR3kd",
 				"KGk-YqS2vG"
 			],
 			"linkedNodes": {}
@@ -1157,9 +1159,107 @@
 			},
 			"displayName": "Text",
 			"custom": {},
-			"parent": "Y7QrcUP8HM",
+			"parent": "__YjgH80f9",
 			"hidden": false,
 			"nodes": [],
+			"linkedNodes": {}
+		},
+		"TjJ49JR3kd": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex",
+					"justifyContent": "center",
+					"gap": "20px"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "Y7QrcUP8HM",
+			"hidden": false,
+			"nodes": [
+				"__YjgH80f9",
+				"Aics1gj139"
+			],
+			"linkedNodes": {}
+		},
+		"Aics1gj139": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "dWrazKtohRDorqUNCpRX59",
+						"events": [
+							"onclick"
+						],
+						"action": "logout",
+						"actionType": "auth",
+						"datasource": {
+							"name": ""
+						}
+					},
+					{
+						"type": "navigation",
+						"id": "jWCsrFXfAQ4mXYcrgukN9F",
+						"events": [
+							"onclick"
+						],
+						"externalLink": false,
+						"loader": "",
+						"parent": "same-tab",
+						"target": "startPage",
+						"isHardCoded": true
+					}
+				],
+				"icon": "fa-solid fa-arrow-right-from-bracket",
+				"style": {
+					"color": "#ffffffff",
+					"backgroundColor": "#D7D7D7",
+					"display": "flex",
+					"justifyContent": "center",
+					"alignItems": "center",
+					"borderRadius": "10px",
+					"cursor": "pointer",
+					"minWidth": "50px",
+					"minHeight": "30px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "TjJ49JR3kd",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"__YjgH80f9": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"width": "fit-content"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "TjJ49JR3kd",
+			"hidden": false,
+			"nodes": [
+				"pd5eR2yFTI"
+			],
 			"linkedNodes": {}
 		}
 	}

@@ -21,7 +21,6 @@ exposed function updateSupplier($street : text; $city : text; $state : text; $zi
 	
 exposed function createFullSupplier($street : text; $city : text; $state : text; $zip : text; $phone : text; $email : text) : cs.SupplierEntity
 	var $saved: object
-	trace
 	this.address := new Object("street"; $street; "city"; $city; "state"; $state; "zip"; $zip)
 	this.contactInfo := new Object("Phone"; $phone; "Email"; $email)
 	if ((not(ds.requiredField(this.name; "supplierName"))) & (not(ds.requiredField(this.address.street; "supplierLocation"))) & (not(ds.requiredField(this.contactInfo.Phone; "supplierPhone"))))

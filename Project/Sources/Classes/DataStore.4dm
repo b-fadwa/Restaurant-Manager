@@ -1,7 +1,6 @@
 Class extends DataStoreImplementation
 
 exposed Function authentify($email : Text; $password : Text) : Boolean
-	trace
 	var $user : cs.UserEntity:=ds.User.query("mail = :1"; $email).first()
 	var $chefPrivileges:collection:=["manageUsers";"manageDataStore"; "manageOrders"; "manageDishes"; "manageSections";"manageProducts";"login"]
 	var $waiterPrivileges:collection:=["manageUsers"; "manageDataStore";"manageOrders";"login"]
