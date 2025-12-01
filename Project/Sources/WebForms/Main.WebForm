@@ -413,7 +413,7 @@
 						],
 						"externalLink": false,
 						"isHardCoded": true,
-						"target": "homePage",
+						"target": "startPage",
 						"parent": "same-tab"
 					}
 				],
