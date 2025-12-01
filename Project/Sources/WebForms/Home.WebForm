@@ -71,6 +71,19 @@
 						"type": "method",
 						"dataclass": "DataStore",
 						"events": [
+							"oninit"
+						],
+						"id": "oNfxgSAV1KbHcBCPz56E43",
+						"method": "ds.authentify",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {}
+					},
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
 							"onload"
 						],
 						"id": "t3ANhzcoJuMb7kBCzyVSkh",

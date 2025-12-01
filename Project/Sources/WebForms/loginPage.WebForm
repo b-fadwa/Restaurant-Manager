@@ -335,21 +335,6 @@
 							"type": "Boolean"
 						},
 						"feedback": true
-					},
-					{
-						"type": "method",
-						"dataclass": "User",
-						"events": [
-							"onclick"
-						],
-						"id": "n2PzfEXYeXZWWUvMcppr47",
-						"method": "ds.User.getCurrentUser",
-						"params": [],
-						"datasource": "",
-						"returns": {
-							"datasource": "Shared:currentUser"
-						},
-						"disabled": true
 					}
 				],
 				"iconPosition": "hidden",

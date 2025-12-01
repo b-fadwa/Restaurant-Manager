@@ -376,7 +376,7 @@
 			"isCanvas": false,
 			"props": {
 				"events": [],
-				"webform": "homePage",
+				"webform": "startPage",
 				"style": {
 					"width": "100%",
 					"height": "500px",
