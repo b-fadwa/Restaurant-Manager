@@ -66,35 +66,35 @@ exposed Function navbar($serverRef : Text)
 	End case 
 	
 	
-exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean  //used to make an empty field required
+exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean  
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]
-	Case of   //check type first and then do the treatment		
-		: ((Value type:C1509($input)=1) && ($input=Null:C1517))  //integer
+	Case of   		
+		: ((Value type:C1509($input)=1) && ($input=Null:C1517))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=3) && ($input=Null:C1517))  //picture
+		: ((Value type:C1509($input)=3) && ($input=Null:C1517))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=30) && ($input=Null:C1517))  //blob
+		: ((Value type:C1509($input)=30) && ($input=Null:C1517))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=2) && ($input=""))  //string
+		: ((Value type:C1509($input)=2) && ($input=""))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=4) && ($input=Date:C102(!00-00-00!)))  //date
+		: ((Value type:C1509($input)=4) && ($input=Date:C102(!00-00-00!)))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=5) && (Undefined:C82($input)))  //undefined
+		: ((Value type:C1509($input)=5) && (Undefined:C82($input)))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=12) && ($input=Null:C1517))  //variant
+		: ((Value type:C1509($input)=12) && ($input=Null:C1517))  
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=6) && ($input=Null:C1517))  //boolean
+		: ((Value type:C1509($input)=6) && ($input=Null:C1517)) 
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=255) && ($input=Null:C1517))  //null
+		: ((Value type:C1509($input)=255) && ($input=Null:C1517)) 
 			$component.addCSSClass("requiredField")
 			return True:C214
 		Else 
@@ -116,11 +116,9 @@ exposed Function isDeliveryOrder($option : Text)
 	
 exposed Function manageRoles()
 	Case of 
-			//super-admin
 		: (Session:C1714.hasPrivilege("manageSections") && Session:C1714.hasPrivilege("manageProducts") && Session:C1714.hasPrivilege("manageSuppliers") && Session:C1714.hasPrivilege("manageDishes")\
 			 && Session:C1714.hasPrivilege("manageOrders"))
 			Web Form:C1735.setMessage("Super-admin !")
-			// waiter
 		: (Session:C1714.hasPrivilege("manageOrders") && Not:C34(Session:C1714.hasPrivilege("manageProducts")) && Not:C34(Session:C1714.hasPrivilege("manageDishes"))\
 			 && Not:C34(Session:C1714.hasPrivilege("manageSuppliers")) && Not:C34(Session:C1714.hasPrivilege("manageSections")))
 			This:C1470.setCss("orderNav"; "visibility")
@@ -128,7 +126,6 @@ exposed Function manageRoles()
 			This:C1470.setCss("sectionNav"; "visibility")
 			This:C1470.setCss("dishNav"; "visibility")
 			Web Form:C1735.setMessage("Waiter!")
-			//chef
 		: (Session:C1714.hasPrivilege("manageSections") && Session:C1714.hasPrivilege("manageOrders") && Session:C1714.hasPrivilege("manageDishes") && Session:C1714.hasPrivilege("manageProducts")\
 			 && Not:C34(Session:C1714.hasPrivilege("manageSuppliers")))
 			This:C1470.setCss("stockNav"; "visibility")
@@ -156,8 +153,6 @@ exposed Function getManifestObject() : Object
 	
 exposed Function generateData()
 	var $newData : cs:C1710.initData:=cs:C1710.initData.new()
-	// drop DATA
 	$newData.dropData()
-	// init DATA
 	$newData.createData()
 	Web Form:C1735.setMessage("Data generated!")

@@ -4,10 +4,10 @@ Class extends Entity
 exposed Function get orderDetail() : Text
 	return (This.table=Null) ? "Ordered by "+String(This.ordererFullName)+" at "+String(This.ordererAddress) : "Table "+String(This.table.integerTable)
 	
-exposed Function get totalPrice() : Integer  // $get the dishes ->$get the price
+exposed Function get totalPrice() : Integer  
 	return This.orderDishes.sum("totalPrice")
 	
-exposed Function get itemNum() : Integer  //item integers displayed in the orders matrix
+exposed Function get itemNum() : Integer 
 	return (This.orderDishes.length#0) ? This.orderDishes.sum("quantity") : 0
 	
 exposed Function saveFullOrder() : cs.OrderEntity
@@ -17,7 +17,7 @@ exposed Function saveFullOrder() : cs.OrderEntity
 	Else 
 		If (ds.requiredField(This.type; "orderType"))
 			Web Form.setError("Select your order type!")
-		Else   //setting up the new order
+		Else   
 			This.orderDate:=Current date()
 			This.orderingHour:=Current time()
 			This.status:="Placed"
@@ -27,7 +27,7 @@ exposed Function saveFullOrder() : cs.OrderEntity
 	End if 
 	return This
 	
-exposed Function decrementQuantity()  //used in the ordering process to decrement the $quantity of the used products in all the ordered dishes
+exposed Function decrementQuantity()  
 	var $product : cs.ProductEntity
 	If (This.orderDishes.length#0)
 		For each ($product; This.orderDishes.dish.dishProducts.product)
@@ -41,14 +41,14 @@ exposed Function decrementQuantity()  //used in the ordering process to decremen
 	
 exposed Function checkStatus()
 	Case of 
-		: ((This.status="Placed") && Not(Session.hasPrivilege("manageSections")))  //placed for waiter  (see nothing but deliver)
+		: ((This.status="Placed") && Not(Session.hasPrivilege("manageSections")))  
 			ds.setCss("displayForChef"; "visibility")
 			ds.setCss("displayForWaiter"; "visibility")
 			Web Form.removeDishButton.show()
 			Web Form.addDishToOrder.show()
 			Web Form.dishQuantity.show()
 			
-		: ((This.status="Placed") && Session.hasPrivilege("manageSections"))  //placed for chef or superAdmin 
+		: ((This.status="Placed") && Session.hasPrivilege("manageSections"))   
 			ds.removeCss("displayForChef"; "visibility")
 			ds.setCss("displayForWaiter"; "visibility")
 			ds.setCss("displayForChef1"; "visibility")
@@ -56,7 +56,7 @@ exposed Function checkStatus()
 			Web Form.addDishToOrder.show()
 			Web Form.dishQuantity.show()
 			
-		: ((This.status="In Progress") && Not(Session.hasPrivilege("manageSections")))  //in progress for waiter (see nothing but deliver)
+		: ((This.status="In Progress") && Not(Session.hasPrivilege("manageSections")))  
 			ds.setCss("displayForChef1"; "visibility")
 			ds.setCss("displayForChef"; "visibility")
 			ds.setCss("displayForWaiter"; "visibility")
@@ -64,7 +64,7 @@ exposed Function checkStatus()
 			Web Form.addDishToOrder.hide()
 			Web Form.dishQuantity.hide()
 			
-		: (This.status="In Progress")  //in progress for chef or admin
+		: (This.status="In Progress")  
 			ds.setCss("displayForChef"; "visibility")
 			ds.removeCss("displayForChef1"; "visibility")
 			ds.setCss("displayForWaiter"; "visibility")
@@ -72,7 +72,7 @@ exposed Function checkStatus()
 			Web Form.addDishToOrder.hide()
 			Web Form.dishQuantity.hide()
 			
-		: (This.status="Ready")  //ready for chef or superAdmin 
+		: (This.status="Ready")  
 			ds.removeCss("displayForWaiter"; "visibility")
 			ds.setCss("displayForChef1"; "visibility")
 			ds.setCss("displayForChef"; "visibility")
@@ -80,7 +80,7 @@ exposed Function checkStatus()
 			Web Form.addDishToOrder.hide()
 			Web Form.dishQuantity.hide()
 			
-		: (This.status="Delivered")  //delivered for chef or superAdmin 
+		: (This.status="Delivered")   
 			ds.setCss("displayForWaiter"; "visibility")
 			ds.setCss("displayForChef"; "visibility")
 			ds.setCss("displayForChef1"; "visibility")

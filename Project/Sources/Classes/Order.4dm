@@ -13,7 +13,6 @@ exposed Function filterByDate($input : Variant) : cs:C1710.OrderSelection
 		: ($input=4)
 			return This:C1470.query("orderDate >= :1 and orderDate <= :2"; Add to date:C393(Current date:C33(); 0; 0; -7); Current date:C33())
 		Else 
-			// return this.all()
 	End case 
 	
 	
@@ -30,26 +29,26 @@ exposed Function filtering($dateSearch : Variant; $waiter : cs:C1710.WaiterEntit
 			$outputOrders:=This:C1470.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
 			$orders:=$orders.and($outputOrders)
 			Web Form:C1735.setMessage("date+waiter+status "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($waiter#Null:C1517)))  //filtering by date and $waiter
+		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($waiter#Null:C1517)))  
 			$orders:=This:C1470.filterByDate($dateSearch)
 			$outputOrders:=This:C1470.query("waiter.user.fullName = :1"; $waiter.user.fullName)
 			$orders:=$orders.and($outputOrders)
 			Web Form:C1735.setMessage("date+waiter "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($status#"") && ($status#Null:C1517)))  //filtering by date and $status
+		: ((($dateSearch#0) && ($dateSearch#Null:C1517)) && (($status#"") && ($status#Null:C1517)))  
 			$orders:=This:C1470.filterByDate($dateSearch)
 			$outputOrders:=This:C1470.query("status = :1"; $status)
 			$orders:=$orders.and($outputOrders)
 			Web Form:C1735.setMessage("date+status "+String:C10($orders.length))
-		: (($waiter#Null:C1517) && (($status#"") && ($status#Null:C1517)))  //filtering by $waiter and $status
+		: (($waiter#Null:C1517) && (($status#"") && ($status#Null:C1517)))  
 			$orders:=This:C1470.query("waiter.user.fullName = :1 and status = :2"; $waiter.user.fullName; $status)
 			Web Form:C1735.setMessage("status+waiter "+String:C10($orders.length))
-		: ((($dateSearch#0) && ($dateSearch#Null:C1517)))  //filtering by date
+		: ((($dateSearch#0) && ($dateSearch#Null:C1517)))  
 			$orders:=This:C1470.filterByDate($dateSearch)
 			Web Form:C1735.setMessage("date "+String:C10($orders.length))
-		: ($waiter#Null:C1517)  //$waiter 
+		: ($waiter#Null:C1517) 
 			$orders:=This:C1470.query("waiter.user.fullName = :1"; $waiter.user.fullName)
 			Web Form:C1735.setMessage("waiter "+String:C10($orders.length))
-		: ((($status#"") && ($status#Null:C1517)))  //filtering by $status
+		: ((($status#"") && ($status#Null:C1517))) 
 			$orders:=This:C1470.query("status = :1"; $status)
 			Web Form:C1735.setMessage("status "+String:C10($orders.length))
 		Else 

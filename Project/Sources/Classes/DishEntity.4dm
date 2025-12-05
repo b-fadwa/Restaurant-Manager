@@ -74,7 +74,7 @@ exposed Function addToMenu($selectedMenuSection : cs:C1710.MenuSectionEntity)
 		Web Form:C1735.setError("Error occured!")
 	End if 
 	
-exposed Function dropDishProducts()  //used in drop dish
+exposed Function dropDishProducts()  
 	var $saved : Object
 	$saved:=This:C1470.dishProducts.drop()
 	If ($saved.length=0)

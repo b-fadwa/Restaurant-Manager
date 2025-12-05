@@ -39,7 +39,7 @@ exposed function create($newOrder : cs.OrderEntity)
 	if (not(ds.requiredField(this.dish.UUID; "orderDish")) & (not(ds.requiredField(this.quantity; "orderQuantity"))) & (this.quantity > 0) & (this.quantity # 0))
 		this.order := $newOrder
 		$saved := this.save()
-		$newOrder.decrementQuantity()  //used to decrement the quantity of the used products in all the ordered dishes
+		$newOrder.decrementQuantity() 
 		if ($saved.success)
 			web Form.setMessage("The dish was successfully added to the order !")
 			web Form["newOrderDish"].hide()
