@@ -1,25 +1,289 @@
 {
 	"forceLogin": true,
+	"restrictedByDefault": false,
 	"permissions": {
 		"allowed": [
 			{
-				"applyTo": "User.getCurrentUser",
+				"applyTo": "ds.generateData",
 				"type": "method",
+				"promote": [
+					"guestPromoted"
+				],
 				"execute": [
-					"guest",
-					"manageUsers"
+					"guest"
 				]
 			},
 			{
 				"applyTo": "User",
 				"type": "dataclass",
 				"read": [
-					"guest",
+					"guestPromoted",
 					"manageUsers"
 				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
+				],
 				"execute": [
-					"guest",
 					"manageUsers"
+				]
+			},
+			{
+				"applyTo": "Waiter",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"update": [
+					"manageOrders"
+				]
+			},
+			{
+				"applyTo": "Order",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"create": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"update": [
+					"manageOrders"
+				],
+				"execute": [
+					"manageOrders"
+				]
+			},
+			{
+				"applyTo": "Table",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
+			{
+				"applyTo": "MenuSection",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageOrders",
+					"manageSections"
+				],
+				"create": [
+					"guestPromoted",
+					"manageSections"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageSections"
+				],
+				"update": [
+					"manageSections"
+				],
+				"execute": [
+					"manageSections"
+				]
+			},
+			{
+				"applyTo": "Dish",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageOrders",
+					"manageDishes"
+				],
+				"create": [
+					"guestPromoted",
+					"manageDishes"
+				],
+				"update": [
+					"guestPromoted",
+					"manageOrders",
+					"manageDishes"
+				],
+				"drop": [
+					"guestPromoted"
+				],
+				"execute": [
+					"manageDishes"
+				]
+			},
+			{
+				"applyTo": "Product",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageProducts"
+				],
+				"create": [
+					"guestPromoted",
+					"manageProducts"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageProducts"
+				],
+				"update": [
+					"manageProducts"
+				],
+				"execute": [
+					"manageProducts"
+				]
+			},
+			{
+				"applyTo": "Facture",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
+			{
+				"applyTo": "Supplier",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageSuppliers"
+				],
+				"create": [
+					"guestPromoted",
+					"manageSuppliers"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageSuppliers"
+				],
+				"update": [
+					"manageSuppliers"
+				],
+				"execute": [
+					"manageSuppliers"
+				]
+			},
+			{
+				"applyTo": "Category",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageProducts"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
+				],
+				"update": [
+					"manageProducts"
+				]
+			},
+			{
+				"applyTo": "OrderDish",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"create": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageOrders"
+				],
+				"update": [
+					"manageOrders"
+				],
+				"execute": [
+					"manageOrders"
+				]
+			},
+			{
+				"applyTo": "DishProduct",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageDishes",
+					"manageProducts"
+				],
+				"create": [
+					"guestPromoted",
+					"manageDishes",
+					"manageProducts"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageProducts"
+				],
+				"update": [
+					"manageDishes",
+					"manageProducts"
+				],
+				"execute": [
+					"manageDishes",
+					"manageProducts"
+				]
+			},
+			{
+				"applyTo": "ProductSupplier",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"manageSuppliers",
+					"manageProducts"
+				],
+				"create": [
+					"guestPromoted",
+					"manageSuppliers",
+					"manageProducts"
+				],
+				"drop": [
+					"guestPromoted",
+					"manageSuppliers",
+					"manageProducts"
+				],
+				"update": [
+					"manageSuppliers",
+					"manageProducts"
+				],
+				"execute": [
+					"manageSuppliers",
+					"manageProducts"
+				]
+			},
+			{
+				"applyTo": "ds.getManifestObject",
+				"type": "method",
+				"execute": [
+					"guest"
 				]
 			},
 			{
@@ -27,6 +291,13 @@
 				"type": "method",
 				"execute": [
 					"login"
+				]
+			},
+			{
+				"applyTo": "User.getCurrentUser",
+				"type": "method",
+				"execute": [
+					"manageUsers"
 				]
 			},
 			{
@@ -80,194 +351,15 @@
 				"execute": [
 					"manageDataStore"
 				]
-			},
-			{
-				"applyTo": "OrderDish",
-				"type": "dataclass",
-				"read": [
-					"manageOrders"
-				],
-				"create": [
-					"manageOrders"
-				],
-				"update": [
-					"manageOrders"
-				],
-				"drop": [
-					"manageOrders"
-				],
-				"execute": [
-					"manageOrders"
-				]
-			},
-			{
-				"applyTo": "Dish",
-				"type": "dataclass",
-				"read": [
-					"manageOrders",
-					"manageDishes"
-				],
-				"update": [
-					"manageOrders",
-					"manageDishes"
-				],
-				"create": [
-					"manageDishes"
-				],
-				"execute": [
-					"manageDishes"
-				]
-			},
-			{
-				"applyTo": "MenuSection",
-				"type": "dataclass",
-				"read": [
-					"manageOrders",
-					"manageSections"
-				],
-				"create": [
-					"manageSections"
-				],
-				"update": [
-					"manageSections"
-				],
-				"drop": [
-					"manageSections"
-				],
-				"execute": [
-					"manageSections"
-				]
-			},
-			{
-				"applyTo": "Order",
-				"type": "dataclass",
-				"read": [
-					"manageOrders"
-				],
-				"create": [
-					"manageOrders"
-				],
-				"update": [
-					"manageOrders"
-				],
-				"drop": [
-					"manageOrders"
-				],
-				"execute": [
-					"manageOrders"
-				]
-			},
-			{
-				"applyTo": "Waiter",
-				"type": "dataclass",
-				"read": [
-					"manageOrders"
-				],
-				"update": [
-					"manageOrders"
-				],
-				"drop": [
-					"manageOrders"
-				]
-			},
-			{
-				"applyTo": "DishProduct",
-				"type": "dataclass",
-				"read": [
-					"manageDishes",
-					"manageProducts"
-				],
-				"create": [
-					"manageDishes",
-					"manageProducts"
-				],
-				"update": [
-					"manageDishes",
-					"manageProducts"
-				],
-				"execute": [
-					"manageDishes",
-					"manageProducts"
-				],
-				"drop": [
-					"manageProducts"
-				]
-			},
-			{
-				"applyTo": "ProductSupplier",
-				"type": "dataclass",
-				"read": [
-					"manageSuppliers",
-					"manageProducts"
-				],
-				"create": [
-					"manageSuppliers",
-					"manageProducts"
-				],
-				"update": [
-					"manageSuppliers",
-					"manageProducts"
-				],
-				"drop": [
-					"manageSuppliers",
-					"manageProducts"
-				],
-				"execute": [
-					"manageSuppliers",
-					"manageProducts"
-				]
-			},
-			{
-				"applyTo": "Supplier",
-				"type": "dataclass",
-				"read": [
-					"manageSuppliers"
-				],
-				"create": [
-					"manageSuppliers"
-				],
-				"update": [
-					"manageSuppliers"
-				],
-				"drop": [
-					"manageSuppliers"
-				],
-				"execute": [
-					"manageSuppliers"
-				]
-			},
-			{
-				"applyTo": "Category",
-				"type": "dataclass",
-				"read": [
-					"manageProducts"
-				],
-				"update": [
-					"manageProducts"
-				]
-			},
-			{
-				"applyTo": "Product",
-				"type": "dataclass",
-				"read": [
-					"manageProducts"
-				],
-				"create": [
-					"manageProducts"
-				],
-				"update": [
-					"manageProducts"
-				],
-				"drop": [
-					"manageProducts"
-				],
-				"execute": [
-					"manageProducts"
-				]
 			}
 		]
 	},
 	"privileges": [
+		{
+			"id": "3o1mer9rr1QUUbuKz2XBSX",
+			"privilege": "guestPromoted",
+			"includes": []
+		},
 		{
 			"id": "aH3gNJbh8wP4yE6aYo6c4X",
 			"privilege": "login",

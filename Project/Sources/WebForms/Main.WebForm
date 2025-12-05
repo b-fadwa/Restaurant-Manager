@@ -28,7 +28,8 @@
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
 					"display": "flex",
-					"flexDirection": "column"
+					"flexDirection": "column",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -375,7 +376,7 @@
 			"isCanvas": false,
 			"props": {
 				"events": [],
-				"webform": "homePage",
+				"webform": "startPage",
 				"style": {
 					"width": "100%",
 					"height": "500px",
@@ -412,7 +413,7 @@
 						],
 						"externalLink": false,
 						"isHardCoded": true,
-						"target": "homePage",
+						"target": "startPage",
 						"parent": "same-tab"
 					}
 				],

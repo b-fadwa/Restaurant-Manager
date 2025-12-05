@@ -106,7 +106,8 @@
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
 					"width": "100%",
-					"height": "100%"
+					"height": "100%",
+					"minHeight": "100%"
 				},
 				"iterableChild": true
 			},
@@ -174,7 +175,9 @@
 					"paddingBottom": "0px",
 					"paddingLeft": "12px",
 					"width": "100%",
-					"height": "100%"
+					"height": "100%",
+					"minHeight": "100%",
+					"maxHeight": "100%"
 				},
 				"iterableChild": true
 			},
@@ -198,13 +201,15 @@
 				"orientation": "vertical",
 				"iterable": true,
 				"classNames": [
-					"matrixBg"
+					"matrixBg",
+					"flexGrow"
 				],
 				"events": [],
 				"style": {
 					"height": "100%",
 					"backgroundColor": "#F1D5BB ",
-					"width": "100%"
+					"width": "100%",
+					"minHeight": "100%"
 				},
 				"datasource": "inventoryModule:selectedSupplier.productSuppliers",
 				"gridProps": {
@@ -508,9 +513,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Description :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Description :",
 				"deletable": true,
 				"style": {
 					"fontSize": "1vw"
@@ -546,7 +552,10 @@
 					"paddingBottom": "6px",
 					"fontSize": "1vw",
 					"fontWeight": "500"
-				}
+				},
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -947,10 +956,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -983,7 +993,10 @@
 				"dataType": "string",
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1066,9 +1079,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Email :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Email :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1112,7 +1126,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1155,9 +1172,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Phone :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Phone :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1201,7 +1219,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1244,9 +1265,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Zip Code:",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Zip Code:",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1290,7 +1312,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1333,9 +1358,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "State :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "State :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1379,7 +1405,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1422,9 +1451,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "City :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "City :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1468,7 +1498,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1511,9 +1544,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Street :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Street :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1557,7 +1591,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2839,10 +2876,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -2906,7 +2944,10 @@
 				"dataType": "string",
 				"moveable": false,
 				"placeholder": "Pasta, Pepper, ...",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2977,9 +3018,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "BarCode :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "BarCode :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -3023,7 +3065,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -3067,9 +3112,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Price :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Price :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -3144,7 +3190,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -3188,9 +3237,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkF2YWlsYWJsZSUyMHF1YW50aXR5JTIyJTJDJTIyYm9sZCUyMiUzQWZhbHNlJTJDJTIyaXRhbGljJTIyJTNBZmFsc2UlMkMlMjJzdHJpa2V0aHJvdWdoJTIyJTNBZmFsc2UlN0QlNUQlN0QlNUQ=\" style=\"white-space: pre;\">Initial quantity </span>:",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkF2YWlsYWJsZSUyMHF1YW50aXR5JTIyJTJDJTIyYm9sZCUyMiUzQWZhbHNlJTJDJTIyaXRhbGljJTIyJTNBZmFsc2UlMkMlMjJzdHJpa2V0aHJvdWdoJTIyJTNBZmFsc2UlN0QlNUQlN0QlNUQ=\" style=\"white-space: pre;\">Initial quantity </span>:",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -3265,7 +3315,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -3309,9 +3362,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "<span style=\"white-space: pre;\">Expiration date:</span>",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "<span style=\"white-space: pre;\">Expiration date:</span>",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -3386,7 +3440,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},

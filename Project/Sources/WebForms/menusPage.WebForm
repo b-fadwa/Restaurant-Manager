@@ -669,7 +669,8 @@
 				"labelPosition": "left",
 				"style": {
 					"backgroundColor": "#FFF",
-					"borderRadius": "0px"
+					"borderRadius": "0px",
+					"width": "300px"
 				},
 				"iterableChild": true
 			},
@@ -689,13 +690,14 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"style": {
 					"display": "none"
 				},
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -751,7 +753,9 @@
 				"datasource": "search",
 				"dataType": "string",
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true,
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},

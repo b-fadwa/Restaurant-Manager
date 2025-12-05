@@ -413,7 +413,7 @@
 			"displayName": "Stylebox",
 			"custom": {
 				"contentWidth": 636,
-				"contentHeight": 46
+				"contentHeight": 44
 			},
 			"parent": "K0gVWtvF-7",
 			"hidden": false,
@@ -1020,17 +1020,17 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkVudGVyJTIwdGhlJTIwb3JkZXJlciUyMG5hbWUlM0ElMjIlMkMlMjJib2xkJTIyJTNBZmFsc2UlMkMlMjJpdGFsaWMlMjIlM0FmYWxzZSUyQyUyMnVuZGVybGluZWQlMjIlM0FmYWxzZSUyQyUyMnN0cmlrZXRocm91Z2glMjIlM0FmYWxzZSU3RCU1RCU3RCU1RA==\" style=\"white-space: pre;\">Orderer name:</span>",
+				"classNames": [
+					"overFlow"
+				],
 				"events": [],
 				"moveable": false,
-				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkVudGVyJTIwdGhlJTIwb3JkZXJlciUyMG5hbWUlM0ElMjIlMkMlMjJib2xkJTIyJTNBZmFsc2UlMkMlMjJpdGFsaWMlMjIlM0FmYWxzZSUyQyUyMnVuZGVybGluZWQlMjIlM0FmYWxzZSUyQyUyMnN0cmlrZXRocm91Z2glMjIlM0FmYWxzZSU3RCU1RCU3RCU1RA==\" style=\"white-space: pre;\">Orderer name:</span>",
 				"style": {
 					"width": "40%",
 					"fontSize": "1vw",
 					"maxWidth": "40%"
 				},
-				"classNames": [
-					"overFlow"
-				],
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -1062,7 +1062,9 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"revealPassword": true
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1680,6 +1682,8 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Set quantity",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"style": {
@@ -1687,7 +1691,6 @@
 					"width": "40%",
 					"minWidth": "40%"
 				},
-				"text": "Set quantity",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -1748,7 +1751,9 @@
 				"readonly": false,
 				"datasource": "OrdersModule:newOrderDish.quantity",
 				"dataType": "number",
-				"revealPassword": true
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1918,39 +1923,30 @@
 						"events": [
 							"onclick"
 						],
-						"action": "refresh",
+						"action": "all",
 						"actionType": "datasource",
 						"datasource": {
 							"name": "orders",
 							"type": "entitysel",
 							"from": "",
 							"namespace": "OrdersModule"
-						}
+						},
+						"disabled": true
 					},
 					{
-						"type": "simple-action",
-						"id": "5iCqrf78ZQB238NjdJw2Ai",
+						"type": "method",
+						"dataclass": "Order",
 						"events": [
 							"onclick"
 						],
-						"action": "query",
-						"datasource": {
-							"name": "orders",
-							"from": "",
-							"type": "entitysel",
-							"namespace": "OrdersModule"
-						},
-						"query": {
-							"query": "orderDate = :1 ",
-							"params": [
-								{
-									"id": "mk3uCT94UL14QnisKtCUw7",
-									"datasource": "Shared:currentDate"
-								}
-							]
-						},
-						"disabled": false,
-						"actionType": "datasource"
+						"id": "dr3u8uZ6ad8e28ZULmV2zk",
+						"method": "ds.Order.getCurrentDateOrders",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"datasource": "OrdersModule:orders"
+						}
 					},
 					{
 						"type": "simple-action",
@@ -2943,17 +2939,17 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkVudGVyJTIwdGhlJTIwb3JkZXJlciUyMG5hbWUlM0ElMjIlMkMlMjJib2xkJTIyJTNBZmFsc2UlMkMlMjJpdGFsaWMlMjIlM0FmYWxzZSUyQyUyMnVuZGVybGluZWQlMjIlM0FmYWxzZSUyQyUyMnN0cmlrZXRocm91Z2glMjIlM0FmYWxzZSU3RCU1RCU3RCU1RA==\" style=\"white-space: pre;\">Orderer address:</span>",
+				"classNames": [
+					"overFlow"
+				],
 				"events": [],
 				"moveable": false,
-				"text": "<span data-slate-fragment=\"JTVCJTdCJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmNoaWxkcmVuJTIyJTNBJTVCJTdCJTIydGV4dCUyMiUzQSUyMkVudGVyJTIwdGhlJTIwb3JkZXJlciUyMG5hbWUlM0ElMjIlMkMlMjJib2xkJTIyJTNBZmFsc2UlMkMlMjJpdGFsaWMlMjIlM0FmYWxzZSUyQyUyMnVuZGVybGluZWQlMjIlM0FmYWxzZSUyQyUyMnN0cmlrZXRocm91Z2glMjIlM0FmYWxzZSU3RCU1RCU3RCU1RA==\" style=\"white-space: pre;\">Orderer address:</span>",
 				"style": {
 					"width": "40%",
 					"fontSize": "1vw",
 					"maxWidth": "40%"
 				},
-				"classNames": [
-					"overFlow"
-				],
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -2985,7 +2981,9 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"revealPassword": true
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},

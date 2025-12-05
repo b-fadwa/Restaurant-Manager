@@ -71,6 +71,19 @@
 						"type": "method",
 						"dataclass": "DataStore",
 						"events": [
+							"oninit"
+						],
+						"id": "oNfxgSAV1KbHcBCPz56E43",
+						"method": "ds.authentify",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {}
+					},
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
 							"onload"
 						],
 						"id": "t3ANhzcoJuMb7kBCzyVSkh",
@@ -112,7 +125,9 @@
 					"paddingLeft": "0px",
 					"backgroundColor": "#F5F5F5",
 					"display": "flex",
-					"flexDirection": "column"
+					"flexDirection": "column",
+					"height": "100%",
+					"minHeight": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -833,7 +848,8 @@
 			"props": {
 				"events": [],
 				"style": {},
-				"iterableChild": true
+				"iterableChild": true,
+				"classNames": []
 			},
 			"displayName": "Stylebox",
 			"custom": {},

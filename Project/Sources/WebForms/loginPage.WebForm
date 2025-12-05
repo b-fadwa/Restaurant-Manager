@@ -70,7 +70,12 @@
 					"display": "flex",
 					"flexDirection": "column",
 					"justifyContent": "space-between",
-					"width": "60%"
+					"width": "60%",
+					"minHeight": "60%",
+					"maxHeight": "60%",
+					"minWidth": "60%",
+					"maxWidth": "60%",
+					"alignItems": "center"
 				}
 			},
 			"displayName": "Stylebox",
@@ -177,9 +182,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Email",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Email",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -208,7 +214,8 @@
 				"style": {
 					"height": "100%",
 					"paddingLeft": "15px"
-				}
+				},
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -249,9 +256,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Pwd",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Pwd",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -280,7 +288,8 @@
 				"style": {
 					"height": "100%",
 					"paddingLeft": "15px"
-				}
+				},
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -326,28 +335,14 @@
 							"type": "Boolean"
 						},
 						"feedback": true
-					},
-					{
-						"type": "method",
-						"dataclass": "User",
-						"events": [
-							"onclick"
-						],
-						"id": "n2PzfEXYeXZWWUvMcppr47",
-						"method": "ds.User.getCurrentUser",
-						"params": [],
-						"datasource": "",
-						"returns": {
-							"datasource": "Shared:currentUser"
-						},
-						"disabled": true
 					}
 				],
 				"iconPosition": "hidden",
 				"style": {
 					"display": "flex",
 					"backgroundColor": "#181818",
-					"height": "50px"
+					"height": "50px",
+					"width": "100%"
 				}
 			},
 			"displayName": "Button",

@@ -523,7 +523,8 @@
 				"orientation": "vertical",
 				"iterable": true,
 				"classNames": [
-					"matrixBg"
+					"matrixBg",
+					"flexGrow"
 				],
 				"events": [],
 				"style": {
@@ -1027,10 +1028,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -1063,7 +1065,10 @@
 				"dataType": "string",
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1106,9 +1111,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "BarCode :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "BarCode :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1152,7 +1158,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1195,9 +1204,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Price :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Price :",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -1241,7 +1251,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": false
+				"readOnly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
