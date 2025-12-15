@@ -9,6 +9,7 @@ From managing orders to tracking inventory and suppliers, the app delivers a cle
 # 🎯 Purpose of the Application
 
 Running a restaurant involves constant coordination between orders, kitchen preparation, menus, stock levels, and suppliers.  
+
 The goal of **Restaurant Manager** is to bring all of this into one intuitive system by providing:
 
 - A **centralized dashboard** for daily operations  
@@ -36,6 +37,8 @@ Manage the full lifecycle of restaurant orders.
 - Automatic calculation and structured display  
 - Track order status (pending, prepared, delivered, etc.)  
 
+![Orders page](Project/Sources/Shared/visuals/ordersPage.png)
+
 
 ### 🍽️ 2. Sections (Menus)  
 Organize and maintain the restaurant’s menus.
@@ -43,6 +46,7 @@ Organize and maintain the restaurant’s menus.
 - Create sections (e.g., Starters, Desserts, Drinks)  
 - Add descriptions and associate dishes with sections  
 
+![Sections page](Project/Sources/Shared/visuals/sectionsPage.png)
 
 ### 🥘 3. Dishes Module  
 Document every dish in detail.
@@ -52,6 +56,9 @@ Document every dish in detail.
 - Association with menu sections  
 - Supports creation of new dishes at any time  
 
+![Dishes page](Project/Sources/Shared/visuals/dishesPage.png)
+
+
 
 ### 📦 4. Inventory Module  
 Track stock levels, suppliers, and product information.
@@ -60,6 +67,8 @@ Track stock levels, suppliers, and product information.
 - Store supply details (categories, products delivered)  
 - Add products with full details  
 - Track stock levels and availability  
+
+![Inventory page](Project/Sources/Shared/visuals/inventoryPage.png)
 
 ---
 
