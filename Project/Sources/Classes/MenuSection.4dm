@@ -1,10 +1,11 @@
 Class extends DataClass
 
-exposed function search($search : text) : cs.MenuSectionSelection
-	if ($search = null)
-		return this.all()
-	else 
-		return this.query("name = :1"; "@"+$search+"@")
-	end if 
+exposed Function search($search : Text) : cs:C1710.MenuSectionSelection
+	If ($search#Null:C1517)
+		return This:C1470.query("name = :1"; "@"+$search+"@")
+	Else 
+		return This:C1470.all()
+	End if 
+	
 	
 	

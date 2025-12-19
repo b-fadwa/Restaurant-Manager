@@ -295,7 +295,7 @@
 			"displayName": "Stylebox",
 			"custom": {
 				"contentWidth": 555,
-				"contentHeight": 28
+				"contentHeight": 27
 			},
 			"parent": "FYiBdKqFdh",
 			"hidden": false,
@@ -928,6 +928,21 @@
 							"type": "entitysel"
 						},
 						"actionType": "datasource"
+					},
+					{
+						"type": "simple-action",
+						"id": "sYFTrB18ezthAs3RWQsuAU",
+						"events": [
+							"onclick"
+						],
+						"action": "refresh",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "suppliers",
+							"type": "entitysel",
+							"from": "",
+							"namespace": "inventoryModule"
+						}
 					},
 					{
 						"type": "dialog",

@@ -96,8 +96,10 @@ Can view incoming orders, update preparation statuses, and access dish descripti
 Follow these steps to start using Restaurant Manager:
 
 ### 1. Clone or Import the Template
- 
-Download or clone the project into your Qodly workspace from the following github link: .
+
+Download or clone the restaurant manager project into your **Qodly workspace** or 4D project folder.  
+
+---
  
 ### 2. Launch the Application
 

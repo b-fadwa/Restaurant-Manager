@@ -18,7 +18,7 @@
 		<field name="UUID" uuid="C7C5789D910D44CF9B281C9BD86033DB" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="name" uuid="90CBF7DC678044B3A2EE49BCEAACEA58" type="10" id="2"/>
 		<field name="description" uuid="E5F4533525DF43089F142F142D87A636" type="10" id="3"/>
-		<field name="image" uuid="086A02F331A54D8A82656C670669D9A0" type="10" id="4"/>
+		<field name="image" uuid="086A02F331A54D8A82656C670669D9A0" type="12" id="4"/>
 		<field name="price" uuid="4E6B1E89E87347089CF567DD0EF7D23C" type="6" id="5"/>
 		<field name="macros" uuid="446C1F58E2D84A06B59F5896E8BA7E47" type="21" blob_switch_size="2147483647" id="6"/>
 		<field name="availability" uuid="BD08FE0994A74D79AB823AA8075893EF" type="1" id="7"/>
@@ -161,7 +161,7 @@
 	<table name="User" uuid="AF3DDF4007064E6796DAEE71680F566C" id="12">
 		<field name="UUID" uuid="27967332381F45319B18226E58E7F976" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="firstName" uuid="48BF49727ACDD7438D67F7F8D05340F4" type="10" limiting_length="255" id="3"/>
-		<field name="avatar" uuid="E68FA73B0C1D47218FEA1108B9CCC267" type="10" id="4"/>
+		<field name="avatar" uuid="E68FA73B0C1D47218FEA1108B9CCC267" type="12" id="4"/>
 		<field name="lastName" uuid="FABF89BB42C5494281E6F6DDB57A844C" type="10" limiting_length="255" id="6">
 			<field_extra multi_line="false"/>
 		</field>

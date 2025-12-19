@@ -315,13 +315,14 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"style": {
 					"display": "none"
 				},
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -354,7 +355,10 @@
 				},
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -468,9 +472,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Description",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Description",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -546,7 +551,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"serverSideRef": "dishDescription"
+				"serverSideRef": "dishDescription",
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -589,9 +597,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Section",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Section",
 				"deletable": true,
 				"style": {
 					"fontWeight": "inherit",
@@ -634,7 +643,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"readOnly": true
+				"readOnly": true,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -679,9 +691,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Price",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Price",
 				"deletable": true,
 				"style": {
 					"width": "30%",
@@ -754,7 +767,10 @@
 				"moveable": false,
 				"placeholder": "",
 				"readonly": false,
-				"serverSideRef": "dishPrice"
+				"serverSideRef": "dishPrice",
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -904,9 +920,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Protein",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Protein",
 				"deletable": true,
 				"style": {
 					"width": "30%",
@@ -947,7 +964,10 @@
 				"dataType": "number",
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -993,9 +1013,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Fat",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Fat",
 				"deletable": true,
 				"style": {
 					"width": "30%",
@@ -1036,7 +1057,10 @@
 				"dataType": "number",
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1082,9 +1106,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Carbohydrates",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Carbohydrates",
 				"deletable": true,
 				"style": {
 					"width": "30%",
@@ -1125,7 +1150,10 @@
 				"dataType": "number",
 				"moveable": false,
 				"placeholder": "",
-				"readonly": false
+				"readonly": false,
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2798,9 +2826,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Quantity",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Quantity",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -2835,7 +2864,10 @@
 				"placeholder": "",
 				"readonly": false,
 				"format": "#,##0.00",
-				"dataType": "number"
+				"dataType": "number",
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},

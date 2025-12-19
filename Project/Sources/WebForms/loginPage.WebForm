@@ -70,11 +70,10 @@
 					"display": "flex",
 					"flexDirection": "column",
 					"justifyContent": "space-between",
-					"width": "60%",
+					"width": "fit-content",
 					"minHeight": "60%",
 					"maxHeight": "60%",
-					"minWidth": "60%",
-					"maxWidth": "60%",
+					"minWidth": "500px",
 					"alignItems": "center"
 				}
 			},

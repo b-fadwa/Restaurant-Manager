@@ -1,13 +1,14 @@
 Class extends Entity
 
-exposed function create($newSupplier : cs.SupplierEntity) 
-	var $saved: object
-	this.supplier := $newSupplier
-	$saved := this.save()
-	if ($saved.success)
-		web Form.setMessage("The Product was successfully added to the Supplier Products !")
-		ds.removeCss("proposedProducts"; "visibility")
-	else 
-		web Form.setError("Cannot add product to supplier !")
-	end if 
+exposed Function create($newSupplier : cs:C1710.SupplierEntity)
+	var $saved : Object
+	This:C1470.supplier:=$newSupplier
+	$saved:=This:C1470.save()
+	If ($saved.success)
+		Web Form:C1735.setMessage("The Product was successfully added to the Supplier Products !")
+		ds:C1482.removeCss("proposedProducts"; "visibility")
+	Else 
+		Web Form:C1735.setError("Cannot add product to supplier !")
+	End if 
+	
 	

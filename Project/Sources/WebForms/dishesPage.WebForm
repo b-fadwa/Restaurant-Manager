@@ -1,7 +1,65 @@
 {
 	"metadata": {
 		"v": "1.0",
-		"datasources": [],
+		"datasources": [
+			{
+				"id": "menuSections",
+				"type": "entitysel",
+				"dataclass": "MenuSection",
+				"initialValue": "all",
+				"depth": null,
+				"pageSize": 100
+			},
+			{
+				"id": "filterMenu",
+				"type": "entity",
+				"dataclass": "MenuSection",
+				"from": "menuSections",
+				"namespace": "",
+				"initialValue": "",
+				"depth": null,
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Dish",
+						"events": [
+							"onChange"
+						],
+						"id": "tsv5WhBAwEasjWQE7czt6J",
+						"method": "ds.Dish.filter",
+						"params": [
+							{
+								"name": "param",
+								"type": "cs.MenuSectionEntity",
+								"datasource": "filterMenu",
+								"id": "7Hk1Big5M5Pv9cmLDPypkr"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "cs.DishSelection",
+							"datasource": "dishModule:dishes"
+						}
+					},
+					{
+						"type": "simple-action",
+						"id": "r5ZYYrWjr5Dh5yraxwe1d8",
+						"events": [
+							"onChange"
+						],
+						"action": "first",
+						"datasource": {
+							"name": "selectedDish",
+							"type": "entity",
+							"namespace": "dishModule",
+							"from": "dishes"
+						},
+						"actionType": "datasource"
+					}
+				]
+			}
+		],
 		"styles": [
 			{
 				"name": "text-overflow1",
@@ -334,8 +392,8 @@
 				"events": [],
 				"template": "{{ length }} items",
 				"rowsNumber": 5,
-				"datasource": "dishModule:menusections",
-				"currentElement": "dishModule:filterMenu",
+				"datasource": "menuSections",
+				"currentElement": "filterMenu",
 				"style": {
 					"width": "25%",
 					"height": "5vh",
@@ -378,7 +436,7 @@
 			"displayName": "Stylebox",
 			"custom": {
 				"contentWidth": 181,
-				"contentHeight": 39
+				"contentHeight": 35
 			},
 			"parent": "tLkE_gC6ZZ",
 			"hidden": false,
@@ -395,7 +453,7 @@
 			"props": {
 				"events": [],
 				"id": "text",
-				"datasource": "dishModule:$This.name",
+				"datasource": "$This.name",
 				"doc": [
 					{
 						"type": "paragraph",
@@ -405,7 +463,7 @@
 							},
 							{
 								"type": "datasource",
-								"datasource": "dishModule:$This.name",
+								"datasource": "$This.name",
 								"children": [
 									{
 										"text": "$This.name"
@@ -426,7 +484,11 @@
 				"iterableChild": true
 			},
 			"displayName": "Text",
-			"custom": {},
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
 			"parent": "KDaXXYRjNe",
 			"hidden": false,
 			"nodes": [],

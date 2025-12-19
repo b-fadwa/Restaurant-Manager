@@ -454,7 +454,8 @@
 						"id": "ePVsNGe1VmwyWr5sRX23yu"
 					}
 				],
-				"currentElement": "inventoryModule:selectedIngredient"
+				"currentElement": "inventoryModule:selectedIngredient",
+				"iterableChild": true
 			},
 			"displayName": "DataTable",
 			"custom": {},
@@ -679,7 +680,8 @@
 						"sorting": true,
 						"id": "7fdEDSAd7QA3AAUgde1HAJ"
 					}
-				]
+				],
+				"iterableChild": true
 			},
 			"displayName": "DataTable",
 			"custom": {},
@@ -1212,7 +1214,8 @@
 						"id": "hydRBtxJ57czBifiN7G7EU"
 					}
 				],
-				"currentElement": ""
+				"currentElement": "",
+				"iterableChild": true
 			},
 			"displayName": "DataTable",
 			"custom": {},

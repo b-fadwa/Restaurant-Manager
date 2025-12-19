@@ -468,7 +468,7 @@
 				"datasource": "menuSectionModule:$This.dishes",
 				"gridProps": {
 					"styleboxWidth": 1,
-					"styleboxHeight": 48,
+					"styleboxHeight": 50,
 					"styleboxPercentWidth": "100%",
 					"enableMosaic": false
 				},

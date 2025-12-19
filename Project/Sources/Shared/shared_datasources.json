@@ -80,46 +80,7 @@
 			"namespace": "dishModule",
 			"initialValue": "",
 			"depth": null,
-			"events": [
-				{
-					"type": "method",
-					"dataclass": "Dish",
-					"events": [
-						"onChange"
-					],
-					"id": "mK1jXs5iy5FLX2dUY1XcjV",
-					"method": "ds.Dish.filter",
-					"params": [
-						{
-							"name": "param",
-							"type": "cs.MenuSectionEntity",
-							"datasource": "dishModule:filterMenu",
-							"id": "7Hk1Big5M5Pv9cmLDPypkr"
-						}
-					],
-					"datasource": "",
-					"returns": {
-						"name": "result",
-						"type": "cs.DishSelection",
-						"datasource": "dishModule:dishes"
-					}
-				},
-				{
-					"type": "simple-action",
-					"id": "x9wFLcAsFjoX2ii2Ts4nos",
-					"events": [
-						"onChange"
-					],
-					"action": "first",
-					"datasource": {
-						"name": "selectedDish",
-						"type": "entity",
-						"namespace": "dishModule",
-						"from": "dishes"
-					},
-					"actionType": "datasource"
-				}
-			]
+			"events": []
 		},
 		{
 			"id": "newIngredient",
@@ -441,6 +402,15 @@
 			"id": "newSupplier",
 			"type": "entity",
 			"dataclass": "Supplier",
+			"namespace": "inventoryModule",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedProduct",
+			"type": "entity",
+			"dataclass": "Product",
+			"from": "products",
 			"namespace": "inventoryModule",
 			"initialValue": "",
 			"depth": null
