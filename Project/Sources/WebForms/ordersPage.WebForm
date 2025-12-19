@@ -967,46 +967,6 @@
 							"datasource": "OrdersModule:orders"
 						},
 						"feedback": false
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onselect"
-						],
-						"id": "uFzGBTcZboMnhTZwyK7A8a",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "nj6qwFF9NGV1XnzmWJfgsE"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "",
-								"id": "t4NGmrWBoe4knaRF6ajCZV",
-								"isHardCoded": true,
-								"hardCodedType": "string",
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "",
-								"id": "nPUgAQQ7tgY6x1GajA2YeE",
-								"isHardCoded": true,
-								"hardCodedType": "string",
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						}
 					}
 				],
 				"template": "{{ length }} items",

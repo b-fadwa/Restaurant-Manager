@@ -42,59 +42,35 @@ exposed Function removeCss($serverRef : Text; $cssClass : Text)
 	$component:=Web Form:C1735[$serverRef]
 	$component.removeCSSClass($cssClass)
 	
-	
-exposed Function navbar($serverRef : Text)
-	var $component : 4D:C1709.WebFormItem
-	Web Form:C1735[$serverRef].addCSSClass("navButtonColor")
-	Case of 
-		: ($serverRef="sectionNav")
-			Web Form:C1735["dishNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["stockNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["orderNav"].removeCSSClass("navButtonColor")
-		: ($serverRef="dishNav")
-			Web Form:C1735["stockNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["orderNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["sectionNav"].removeCSSClass("navButtonColor")
-		: ($serverRef="stockNav")
-			Web Form:C1735["orderNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["dishNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["sectionNav"].removeCSSClass("navButtonColor")
-		: ($serverRef="orderNav")
-			Web Form:C1735["sectionNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["dishNav"].removeCSSClass("navButtonColor")
-			Web Form:C1735["stockNav"].removeCSSClass("navButtonColor")
-	End case 
-	
-	
-exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean  
+exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]
-	Case of   		
-		: ((Value type:C1509($input)=1) && ($input=Null:C1517))  
+	Case of 
+		: ((Value type:C1509($input)=1) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=3) && ($input=Null:C1517))  
+		: ((Value type:C1509($input)=3) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=30) && ($input=Null:C1517))  
+		: ((Value type:C1509($input)=30) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=2) && ($input=""))  
+		: ((Value type:C1509($input)=2) && ($input=""))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=4) && ($input=Date:C102(!00-00-00!)))  
+		: ((Value type:C1509($input)=4) && ($input=Date:C102(!00-00-00!)))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=5) && (Undefined:C82($input)))  
+		: ((Value type:C1509($input)=5) && (Undefined:C82($input)))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=12) && ($input=Null:C1517))  
+		: ((Value type:C1509($input)=12) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=6) && ($input=Null:C1517)) 
+		: ((Value type:C1509($input)=6) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
-		: ((Value type:C1509($input)=255) && ($input=Null:C1517)) 
+		: ((Value type:C1509($input)=255) && ($input=Null:C1517))
 			$component.addCSSClass("requiredField")
 			return True:C214
 		Else 
@@ -114,34 +90,6 @@ exposed Function isDeliveryOrder($option : Text)
 		ds:C1482.removeCss("orderTable"; "visibility")
 	End if 
 	
-exposed Function manageRoles()
-	Case of 
-		: (Session:C1714.hasPrivilege("manageSections") && Session:C1714.hasPrivilege("manageProducts") && Session:C1714.hasPrivilege("manageSuppliers") && Session:C1714.hasPrivilege("manageDishes")\
-			 && Session:C1714.hasPrivilege("manageOrders"))
-			Web Form:C1735.setMessage("Super-admin !")
-		: (Session:C1714.hasPrivilege("manageOrders") && Not:C34(Session:C1714.hasPrivilege("manageProducts")) && Not:C34(Session:C1714.hasPrivilege("manageDishes"))\
-			 && Not:C34(Session:C1714.hasPrivilege("manageSuppliers")) && Not:C34(Session:C1714.hasPrivilege("manageSections")))
-			This:C1470.setCss("orderNav"; "visibility")
-			This:C1470.setCss("stockNav"; "visibility")
-			This:C1470.setCss("sectionNav"; "visibility")
-			This:C1470.setCss("dishNav"; "visibility")
-			Web Form:C1735.setMessage("Waiter!")
-		: (Session:C1714.hasPrivilege("manageSections") && Session:C1714.hasPrivilege("manageOrders") && Session:C1714.hasPrivilege("manageDishes") && Session:C1714.hasPrivilege("manageProducts")\
-			 && Not:C34(Session:C1714.hasPrivilege("manageSuppliers")))
-			This:C1470.setCss("stockNav"; "visibility")
-			Web Form:C1735.setMessage("Chef!")
-		Else 
-			Web Form:C1735.setError("No permission!")
-	End case 
-	
-exposed Function noData($selectionLength : Variant; $toHidePart : Text; $toShowPart : Text)
-	If ($selectionLength=0)
-		Web Form:C1735[$toHidePart].hide()
-		Web Form:C1735[$toShowPart].show()
-	Else 
-		Web Form:C1735[$toHidePart].show()
-		Web Form:C1735[$toShowPart].hide()
-	End if 
 	
 exposed Function getManifestObject() : Object
 	var $manifestFile : 4D:C1709.File

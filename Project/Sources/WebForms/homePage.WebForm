@@ -2,7 +2,182 @@
 	"metadata": {
 		"v": "1.0",
 		"datasources": [],
-		"styles": []
+		"styles": [],
+		"states": [
+			{
+				"label": "Base",
+				"id": "root"
+			},
+			{
+				"label": "isChef",
+				"id": "38tWzNd3fFzeDt3BeKxrzW",
+				"conditions": {
+					"id": "6vMwzGV75Jbf8RrvSdQcRy",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "wsd3PYFoPAsgaZQgb8ZQjD",
+							"type": "privilege",
+							"name": "manageSections",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "odc7PHwfuGdZQn76qs2rVQ",
+							"type": "privilege",
+							"name": "manageOrders",
+							"value": "manageOrders",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "duxKsDG97PSoY9cAeqJA6w",
+							"type": "privilege",
+							"name": "manageDishes",
+							"value": "manageDishes",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "7Ti7hrDTWcDbAndmDSTQYP",
+							"type": "privilege",
+							"name": "manageProducts",
+							"value": "manageProducts",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "mfMJYdTMDyEHBxCcHLQzQf",
+							"type": "privilege",
+							"name": "notManageSuppliers",
+							"value": "manageSuppliers",
+							"valueType": "hardCoded",
+							"op": "neq"
+						}
+					]
+				}
+			},
+			{
+				"label": "isAdmin",
+				"id": "rTmjo2mmJvjXdAep5wDGAD",
+				"conditions": {
+					"id": "gMQQboo6psZKXabQF4muUw",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "vLPsH7dCF9k3YpmLf9n5of",
+							"type": "privilege",
+							"name": "manageSections",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "aMLcRL2ETkz95sNnJ5eB6F",
+							"type": "privilege",
+							"name": "manageSuppliers",
+							"value": "manageSuppliers",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "nfYStKWzgQ9twVSVeMkrgz",
+							"type": "privilege",
+							"name": "manageProducts",
+							"value": "manageProducts",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "dhA7mWRp7XVwCSr7LJhChz",
+							"type": "privilege",
+							"name": "manageDishes",
+							"value": "manageDishes",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "4bfgCPQHinUiiaLQN2r2eP",
+							"type": "privilege",
+							"name": "manageOrders",
+							"value": "manageOrders",
+							"valueType": "hardCoded",
+							"op": "eq"
+						}
+					]
+				}
+			},
+			{
+				"label": "isWaiter",
+				"id": "8ynRf2Gy68whggEW4NMAhQ",
+				"conditions": {
+					"id": "hZ7ifcVydTEhrzFjfDB3ts",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "4SoHxMjVEahyDkhcAvsMLC",
+							"type": "privilege",
+							"name": "manageOrders",
+							"value": "manageOrders",
+							"valueType": "hardCoded",
+							"op": "eq"
+						},
+						{
+							"id": "xmEHrXpQoQkcPHhnEtb8Z8",
+							"type": "privilege",
+							"name": "notManageProducts",
+							"value": "manageProducts",
+							"valueType": "hardCoded",
+							"op": "neq"
+						},
+						{
+							"id": "nKuEGPn4d7YCLc2RfG2Lg3",
+							"type": "privilege",
+							"name": "notManageDishes",
+							"value": "manageDishes",
+							"valueType": "hardCoded",
+							"op": "neq"
+						},
+						{
+							"id": "xb3dh9B8gScCvZFEmajE5w",
+							"type": "privilege",
+							"name": "notManageSuppliers",
+							"value": "manageSuppliers",
+							"valueType": "hardCoded",
+							"op": "neq"
+						},
+						{
+							"id": "4E59SJfCzSoXA7LVWKRXVj",
+							"type": "privilege",
+							"name": "notManageSections",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "neq"
+						}
+					]
+				}
+			},
+			{
+				"label": "ordersPage",
+				"id": "qZjGE4hNhYXkA2Hjj5Dngi"
+			},
+			{
+				"label": "sectionsPage",
+				"id": "3ByeaLr7LAhUQyGvdC5CCu"
+			},
+			{
+				"label": "dishesPage",
+				"id": "qmiFvjLC2wdyMK4mAYXTyc"
+			},
+			{
+				"label": "stocksPage",
+				"id": "mzQfuXssCzaoYGwEu5yyLJ"
+			}
+		]
 	},
 	"components": {
 		"ROOT": {
@@ -27,22 +202,6 @@
 							"name": "result",
 							"type": "cs.UserEntity",
 							"datasource": "Shared:currentUser"
-						},
-						"feedback": false
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onload"
-						],
-						"id": "7MijMWyEzmoLoFwGepmkYL",
-						"method": "ds.manageRoles",
-						"params": [],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
 						},
 						"feedback": false
 					}
@@ -209,40 +368,42 @@
 				],
 				"events": [
 					{
-						"type": "method",
-						"dataclass": "DataStore",
+						"type": "simple-action",
+						"id": "dGtS63WhyeE4orsJeR1oTy",
 						"events": [
 							"onclick"
 						],
-						"id": "1EZfTKqsdRNE69ocyqCd37",
-						"method": "ds.navbar",
-						"params": [
-							{
-								"name": "serverRef",
-								"type": "Text",
-								"datasource": "",
-								"id": "3SW24afC59rhrqNSwDBeSu",
-								"isHardCoded": true,
-								"hardCodedValue": "orderNav"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "$0",
-							"type": "Variable"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "add",
+							"states": [
+								"qZjGE4hNhYXkA2Hjj5Dngi"
+							]
 						}
 					},
 					{
-						"type": "navigation",
-						"id": "vsv4zob76MgDWKCGPnNX5Y",
+						"type": "simple-action",
+						"id": "2dUnzQbCpsP1WfZBP9B2wo",
 						"events": [
 							"onclick"
 						],
-						"externalLink": false,
-						"loader": "ruAKYkBET1",
-						"parent": "webform-loader",
-						"isHardCoded": true,
-						"target": "ordersPage"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "delete",
+							"states": [
+								"3ByeaLr7LAhUQyGvdC5CCu",
+								"qmiFvjLC2wdyMK4mAYXTyc",
+								"mzQfuXssCzaoYGwEu5yyLJ"
+							]
+						}
 					}
 				],
 				"iconPosition": "left",
@@ -259,7 +420,28 @@
 				"serverSideRef": "orderNav"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:8ynRf2Gy68whggEW4NMAhQ": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:3ByeaLr7LAhUQyGvdC5CCu": {
+					"classNames": [
+						"flexGrow"
+					]
+				},
+				"states:mzQfuXssCzaoYGwEu5yyLJ": {
+					"classNames": [
+						"flexGrow"
+					]
+				},
+				"states:qmiFvjLC2wdyMK4mAYXTyc": {
+					"classNames": [
+						"flexGrow"
+					]
+				}
+			},
 			"parent": "TRALaukwU1",
 			"hidden": false,
 			"nodes": [],
@@ -306,41 +488,42 @@
 				],
 				"events": [
 					{
-						"type": "method",
-						"dataclass": "DataStore",
+						"type": "simple-action",
+						"id": "1RKTACky4YMoz6MwEDy1Lj",
 						"events": [
 							"onclick"
 						],
-						"id": "n5e6vj8kUXADGq7rKe3515",
-						"method": "ds.navbar",
-						"params": [
-							{
-								"name": "serverRef",
-								"type": "Text",
-								"datasource": "sectionNav",
-								"id": "8oPiBcu3dh6ji6AhiUv9NR",
-								"isHardCoded": true,
-								"hardCodedValue": "sectionNav"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "$0",
-							"type": "Variable"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
 						},
-						"disabled": false
+						"state": {
+							"action": "add",
+							"states": [
+								"3ByeaLr7LAhUQyGvdC5CCu"
+							]
+						}
 					},
 					{
-						"type": "navigation",
-						"id": "e7GXDnQSjAy4k88Vq5JFcV",
+						"type": "simple-action",
+						"id": "tBfK25Q9NabZybZ9Ks6iWG",
 						"events": [
 							"onclick"
 						],
-						"externalLink": false,
-						"loader": "ruAKYkBET1",
-						"parent": "webform-loader",
-						"isHardCoded": true,
-						"target": "menusPage"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "delete",
+							"states": [
+								"qZjGE4hNhYXkA2Hjj5Dngi",
+								"qmiFvjLC2wdyMK4mAYXTyc",
+								"mzQfuXssCzaoYGwEu5yyLJ"
+							]
+						}
 					}
 				],
 				"iconPosition": "left",
@@ -357,7 +540,23 @@
 				"serverSideRef": "sectionNav"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:8ynRf2Gy68whggEW4NMAhQ": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:3ByeaLr7LAhUQyGvdC5CCu": {
+					"style": {
+						"color": "#181818"
+					}
+				},
+				"states:qmiFvjLC2wdyMK4mAYXTyc": {
+					"classNames": [
+						"flexGrow"
+					]
+				}
+			},
 			"parent": "TRALaukwU1",
 			"hidden": false,
 			"nodes": [],
@@ -386,7 +585,13 @@
 				}
 			},
 			"displayName": "Icon",
-			"custom": {},
+			"custom": {
+				"states:3ByeaLr7LAhUQyGvdC5CCu": {
+					"style": {
+						"backgroundColor": "#181818"
+					}
+				}
+			},
 			"parent": "uq5JZXlRla",
 			"hidden": false,
 			"nodes": [],
@@ -404,40 +609,42 @@
 				],
 				"events": [
 					{
-						"type": "method",
-						"dataclass": "DataStore",
+						"type": "simple-action",
+						"id": "ueUpyuGCTLUYGpbYxcncZY",
 						"events": [
 							"onclick"
 						],
-						"id": "gqbbgw4zsDxbVoRJYLp9PR",
-						"method": "ds.navbar",
-						"params": [
-							{
-								"name": "serverRef",
-								"type": "Text",
-								"datasource": "",
-								"id": "fKHwCWx1dcouN8682Zr195",
-								"isHardCoded": true,
-								"hardCodedValue": "dishNav"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "$0",
-							"type": "Variable"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "add",
+							"states": [
+								"qmiFvjLC2wdyMK4mAYXTyc"
+							]
 						}
 					},
 					{
-						"type": "navigation",
-						"id": "wEbs5JdBEne4UTZD8AdWey",
+						"type": "simple-action",
+						"id": "93SS2DSks1UsHwTyz9PuXQ",
 						"events": [
 							"onclick"
 						],
-						"externalLink": false,
-						"loader": "ruAKYkBET1",
-						"parent": "webform-loader",
-						"isHardCoded": true,
-						"target": "dishesPage"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "delete",
+							"states": [
+								"qZjGE4hNhYXkA2Hjj5Dngi",
+								"3ByeaLr7LAhUQyGvdC5CCu",
+								"mzQfuXssCzaoYGwEu5yyLJ"
+							]
+						}
 					}
 				],
 				"iconPosition": "left",
@@ -454,7 +661,24 @@
 				"serverSideRef": "dishNav"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:8ynRf2Gy68whggEW4NMAhQ": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:3ByeaLr7LAhUQyGvdC5CCu": {
+					"classNames": [
+						"flexGrow"
+					]
+				},
+				"states:qmiFvjLC2wdyMK4mAYXTyc": {
+					"classNames": [
+						"flexGrow",
+						"navButtonColor"
+					]
+				}
+			},
 			"parent": "TRALaukwU1",
 			"hidden": false,
 			"nodes": [],
@@ -501,40 +725,42 @@
 				],
 				"events": [
 					{
-						"type": "method",
-						"dataclass": "DataStore",
+						"type": "simple-action",
+						"id": "sGV81D6Bur5ix1QLKuh4p9",
 						"events": [
 							"onclick"
 						],
-						"id": "uDnrZivkAzY6qDm5uMhtHf",
-						"method": "ds.navbar",
-						"params": [
-							{
-								"name": "serverRef",
-								"type": "Text",
-								"datasource": "",
-								"id": "tvMsNQAUXaPjV2XU4zLEug",
-								"isHardCoded": true,
-								"hardCodedValue": "stockNav"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "$0",
-							"type": "Variable"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "add",
+							"states": [
+								"mzQfuXssCzaoYGwEu5yyLJ"
+							]
 						}
 					},
 					{
-						"type": "navigation",
-						"id": "vmsPKxKFwBc71ZFzrq3jHe",
+						"type": "simple-action",
+						"id": "txpKQrghQYT61QYjHPK7HR",
 						"events": [
 							"onclick"
 						],
-						"externalLink": false,
-						"loader": "ruAKYkBET1",
-						"parent": "webform-loader",
-						"isHardCoded": true,
-						"target": "stocksPage"
+						"action": "",
+						"actionType": "state",
+						"datasource": {
+							"name": ""
+						},
+						"state": {
+							"action": "delete",
+							"states": [
+								"qZjGE4hNhYXkA2Hjj5Dngi",
+								"3ByeaLr7LAhUQyGvdC5CCu",
+								"qmiFvjLC2wdyMK4mAYXTyc"
+							]
+						}
 					}
 				],
 				"iconPosition": "left",
@@ -551,7 +777,24 @@
 				"serverSideRef": "stockNav"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:38tWzNd3fFzeDt3BeKxrzW": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:8ynRf2Gy68whggEW4NMAhQ": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mzQfuXssCzaoYGwEu5yyLJ": {
+					"classNames": [
+						"flexGrow",
+						"navButtonColor"
+					]
+				}
+			},
 			"parent": "TRALaukwU1",
 			"hidden": false,
 			"nodes": [],
@@ -814,7 +1057,17 @@
 				}
 			},
 			"displayName": "Page Loader",
-			"custom": {},
+			"custom": {
+				"states:3ByeaLr7LAhUQyGvdC5CCu": {
+					"webform": "menusPage"
+				},
+				"states:mzQfuXssCzaoYGwEu5yyLJ": {
+					"webform": "stocksPage"
+				},
+				"states:qmiFvjLC2wdyMK4mAYXTyc": {
+					"webform": "dishesPage"
+				}
+			},
 			"parent": "ROOT",
 			"hidden": false,
 			"nodes": [],
