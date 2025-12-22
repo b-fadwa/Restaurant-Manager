@@ -1207,7 +1207,12 @@
 							"type": "object",
 							"namespace": "dishModule",
 							"target": "protein",
-							"targetNamespace": ""
+							"targetNamespace": "",
+							"targetType": "unknown",
+							"set": {
+								"value": "",
+								"type": "string"
+							}
 						},
 						"actionType": "datasource"
 					},
@@ -1224,7 +1229,12 @@
 							"type": "object",
 							"namespace": "dishModule",
 							"target": "carbs",
-							"targetNamespace": ""
+							"targetNamespace": "",
+							"targetType": "unknown",
+							"set": {
+								"value": "",
+								"type": "string"
+							}
 						},
 						"actionType": "datasource"
 					},
@@ -1241,7 +1251,12 @@
 							"type": "object",
 							"namespace": "dishModule",
 							"target": "fat",
-							"targetNamespace": ""
+							"targetNamespace": "",
+							"set": {
+								"value": "",
+								"type": "string"
+							},
+							"targetType": "unknown"
 						},
 						"actionType": "datasource"
 					},

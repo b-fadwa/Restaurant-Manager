@@ -2,103 +2,55 @@ Class extends Entity
 
 
 exposed Function get orderDetail() : Text
-	return (This.table=Null) ? "Ordered by "+String(This.ordererFullName)+" at "+String(This.ordererAddress) : "Table "+String(This.table.integerTable)
+	return (This:C1470.table=Null:C1517) ? "Ordered by "+String:C10(This:C1470.ordererFullName)+" at "+String:C10(This:C1470.ordererAddress) : "Table "+String:C10(This:C1470.table.integerTable)
 	
-exposed Function get totalPrice() : Integer  
-	return This.orderDishes.sum("totalPrice")
+exposed Function get totalPrice() : Integer
+	return This:C1470.orderDishes.sum("totalPrice")
 	
-exposed Function get itemNum() : Integer 
-	return (This.orderDishes.length#0) ? This.orderDishes.sum("quantity") : 0
+exposed Function get itemNum() : Integer
+	return (This:C1470.orderDishes.length#0) ? This:C1470.orderDishes.sum("quantity") : 0
 	
-exposed Function saveFullOrder() : cs.OrderEntity
+exposed Function saveFullOrder() : cs:C1710.OrderEntity
 	var $saved : Object
-	If (ds.requiredField(This.waiter.user.fullName; "newOrderWaiter"))
-		Web Form.setError("Select a waiter first!")
+	If (ds:C1482.requiredField(This:C1470.waiter.user.fullName; "newOrderWaiter"))
+		Web Form:C1735.setError("Select a waiter first!")
 	Else 
-		If (ds.requiredField(This.type; "orderType"))
-			Web Form.setError("Select your order type!")
-		Else   
-			This.orderDate:=Current date()
-			This.orderingHour:=Current time()
-			This.status:="Placed"
-			$saved:=This.save()
-			Web Form.newOrderDish.show()
+		If (ds:C1482.requiredField(This:C1470.type; "orderType"))
+			Web Form:C1735.setError("Select your order type!")
+		Else 
+			This:C1470.orderDate:=Current date:C33()
+			This:C1470.orderingHour:=Current time:C178()
+			This:C1470.status:="Placed"
+			$saved:=This:C1470.save()
+			Web Form:C1735.newOrderDish.show()
 		End if 
 	End if 
-	return This
+	return This:C1470
 	
-exposed Function decrementQuantity()  
-	var $product : cs.ProductEntity
-	If (This.orderDishes.length#0)
-		For each ($product; This.orderDishes.dish.dishProducts.product)
+	
+	// Decrements product stock quantities for ordered dishes and warns when stock reaches a low threshold.
+exposed Function decrementQuantity()
+	var $product : cs:C1710.ProductEntity
+	If (This:C1470.orderDishes.length#0)
+		For each ($product; This:C1470.orderDishes.dish.dishProducts.product)
 			$product.availableQuantity-=1
 			$product.save()
 			If ($product.availableQuantity<=50)
-				Web Form.setWarning("you are "+String($product.availableQuantity)+" units away from reaching your stock limit of the "+String($product.name)+" !")
+				Web Form:C1735.setWarning("you are "+String:C10($product.availableQuantity)+" units away from reaching your stock limit of the "+String:C10($product.name)+" !")
 			End if 
 		End for each 
 	End if 
 	
-exposed Function checkStatus()
-	Case of 
-		: ((This.status="Placed") && Not(Session.hasPrivilege("manageSections")))  
-			ds.setCss("displayForChef"; "visibility")
-			ds.setCss("displayForWaiter"; "visibility")
-			Web Form.removeDishButton.show()
-			Web Form.addDishToOrder.show()
-			Web Form.dishQuantity.show()
-			
-		: ((This.status="Placed") && Session.hasPrivilege("manageSections"))   
-			ds.removeCss("displayForChef"; "visibility")
-			ds.setCss("displayForWaiter"; "visibility")
-			ds.setCss("displayForChef1"; "visibility")
-			Web Form.removeDishButton.show()
-			Web Form.addDishToOrder.show()
-			Web Form.dishQuantity.show()
-			
-		: ((This.status="In Progress") && Not(Session.hasPrivilege("manageSections")))  
-			ds.setCss("displayForChef1"; "visibility")
-			ds.setCss("displayForChef"; "visibility")
-			ds.setCss("displayForWaiter"; "visibility")
-			Web Form.removeDishButton.hide()
-			Web Form.addDishToOrder.hide()
-			Web Form.dishQuantity.hide()
-			
-		: (This.status="In Progress")  
-			ds.setCss("displayForChef"; "visibility")
-			ds.removeCss("displayForChef1"; "visibility")
-			ds.setCss("displayForWaiter"; "visibility")
-			Web Form.removeDishButton.hide()
-			Web Form.addDishToOrder.hide()
-			Web Form.dishQuantity.hide()
-			
-		: (This.status="Ready")  
-			ds.removeCss("displayForWaiter"; "visibility")
-			ds.setCss("displayForChef1"; "visibility")
-			ds.setCss("displayForChef"; "visibility")
-			Web Form.removeDishButton.hide()
-			Web Form.addDishToOrder.hide()
-			Web Form.dishQuantity.hide()
-			
-		: (This.status="Delivered")   
-			ds.setCss("displayForWaiter"; "visibility")
-			ds.setCss("displayForChef"; "visibility")
-			ds.setCss("displayForChef1"; "visibility")
-			Web Form.removeDishButton.hide()
-			Web Form.addDishToOrder.hide()
-			Web Form.dishQuantity.hide()
-			
-	End case 
-	
+	// Groups order dishes by dish name and returns their total quantities and prices.
 exposed Function groupedOrderDishes() : Collection
 	var $distinctDishes : Collection
-	This.reload()
-	$distinctDishes:=This.orderDishes.dish.distinct("name").sort()
+	This:C1470.reload()
+	$distinctDishes:=This:C1470.orderDishes.dish.distinct("name").sort()
 	var $distinctDish : Text
-	var $groupedOrderDishes : Collection:=New collection()
-	var $orderDish : cs.OrderDishEntity
-	var $orderOD : cs.OrderDishSelection
-	$orderOD:=This.orderDishes.orderBy("dish.name")
+	var $groupedOrderDishes : Collection:=New collection:C1472()
+	var $orderDish : cs:C1710.OrderDishEntity
+	var $orderOD : cs:C1710.OrderDishSelection
+	$orderOD:=This:C1470.orderDishes.orderBy("dish.name")
 	var $quantity : Integer
 	
 	For each ($distinctDish; $distinctDishes)
@@ -108,44 +60,47 @@ exposed Function groupedOrderDishes() : Collection
 				$quantity+=$orderDish.quantity
 			End if 
 		End for each 
-		$groupedOrderDishes.push(New object("dish"; $distinctDish; "quantity"; $quantity; "price"; ds.Dish.query("name = :1"; $distinctDish).first().price))
+		$groupedOrderDishes.push(New object:C1471("dish"; $distinctDish; "quantity"; $quantity; "price"; ds:C1482.Dish.query("name = :1"; $distinctDish).first().price))
 	End for each 
 	return $groupedOrderDishes
 	
+	
+	// Decreases or increases the quantity of a dish in the order by name and returns the updated grouped order summary.
 exposed Function minuss($dishName : Text) : Collection
-	var $orderDish : cs.OrderDishEntity
+	var $orderDish : cs:C1710.OrderDishEntity
 	var $output : Collection
-	If (This.orderDishes.query("dish.name = :1"; $dishName).length#0)
-		$orderDish:=This.orderDishes.query("dish.name = :1"; $dishName).first()
+	If (This:C1470.orderDishes.query("dish.name = :1"; $dishName).length#0)
+		$orderDish:=This:C1470.orderDishes.query("dish.name = :1"; $dishName).first()
 		$orderDish.decrementQuantity()
 	Else 
-		Web Form.setError("Error")
+		Web Form:C1735.setError("Error")
 	End if 
-	$output:=This.groupedOrderDishes()
+	$output:=This:C1470.groupedOrderDishes()
 	return $output
 	
 exposed Function pluss($dishName : Text) : Collection
-	var $orderDish : cs.OrderDishEntity
-	If (This.orderDishes.query("dish.name = :1"; $dishName).length#0)
-		$orderDish:=This.orderDishes.query("dish.name = :1"; $dishName).first()
+	var $orderDish : cs:C1710.OrderDishEntity
+	If (This:C1470.orderDishes.query("dish.name = :1"; $dishName).length#0)
+		$orderDish:=This:C1470.orderDishes.query("dish.name = :1"; $dishName).first()
 		$orderDish.incrementQuantity()
 	Else 
-		Web Form.setError("Error")
+		Web Form:C1735.setError("Error")
 	End if 
-	return This.groupedOrderDishes()
+	return This:C1470.groupedOrderDishes()
 	
+	// Removes all order-dish entries matching the given dish and returns the updated grouped order summary.
 exposed Function removeOrderDishes($orderDish : Object) : Collection
-	var $orderDishes : cs.OrderDishSelection
-	var $status : cs.OrderDishSelection
-	$orderDishes:=This.orderDishes.query("dish.name = :1"; $orderDish.dish)
+	var $orderDishes : cs:C1710.OrderDishSelection
+	var $status : cs:C1710.OrderDishSelection
+	$orderDishes:=This:C1470.orderDishes.query("dish.name = :1"; $orderDish.dish)
 	If ($orderDishes.length#0)
 		$status:=$orderDishes.drop()
 		If ($status.length=0)
-			Web Form.setMessage("Removed!")
+			Web Form:C1735.setMessage("Removed!")
 		Else 
-			Web Form.setError("Error")
+			Web Form:C1735.setError("Error")
 		End if 
 	End if 
-	return This.groupedOrderDishes()
+	return This:C1470.groupedOrderDishes()
 	
 	

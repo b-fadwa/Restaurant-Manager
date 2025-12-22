@@ -282,31 +282,6 @@
 						"parent": "webform-loader",
 						"target": "ordersPage",
 						"isHardCoded": true
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onclick"
-						],
-						"id": "tvv41abkhGhc36bRQxFkg8",
-						"method": "ds.navbar",
-						"params": [
-							{
-								"name": "serverRef",
-								"type": "string",
-								"datasource": "",
-								"id": "ohYcpULwHjsi9zcvJwALbx",
-								"isHardCoded": true,
-								"hardCodedType": "string",
-								"hardCodedValue": "orderNav"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						}
 					}
 				],
 				"style": {

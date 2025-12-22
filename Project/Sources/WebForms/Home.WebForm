@@ -1053,7 +1053,8 @@
 							"type": "entity",
 							"namespace": "",
 							"target": "selectedVisual",
-							"targetNamespace": ""
+							"targetNamespace": "",
+							"targetType": "unknown"
 						}
 					}
 				],
