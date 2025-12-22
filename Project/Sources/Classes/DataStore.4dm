@@ -1,5 +1,6 @@
 Class extends DataStoreImplementation
 
+// Authenticates a user and assigns role-based or guest privileges using session management
 exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $guestPrivs : Collection:=["guest"; "guestPromoted"]
 	If (($email="") && ($password=""))
@@ -32,6 +33,7 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 		Web Form:C1735.setError("Authentication failed")
 	End if 
 	
+	// Adding/removing a CSS class on a Web Form component identified by its server reference.
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]
@@ -42,6 +44,7 @@ exposed Function removeCss($serverRef : Text; $cssClass : Text)
 	$component:=Web Form:C1735[$serverRef]
 	$component.removeCSSClass($cssClass)
 	
+	//required field code checkup
 exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]
@@ -81,16 +84,7 @@ exposed Function requiredField($input : Variant; $serverRef : Text) : Boolean
 exposed Function returnCurrentDate() : Date
 	return Date:C102(Current date:C33())
 	
-exposed Function isDeliveryOrder($option : Text)
-	If ($option="Delivery")
-		ds:C1482.setCss("orderTable"; "visibility")
-		ds:C1482.removeCss("orderName"; "visibility")
-	Else 
-		ds:C1482.setCss("orderName"; "visibility")
-		ds:C1482.removeCss("orderTable"; "visibility")
-	End if 
-	
-	
+	//used to get the manifest structure for the Home page
 exposed Function getManifestObject() : Object
 	var $manifestFile : 4D:C1709.File
 	var $manifestObject : Object
@@ -98,7 +92,7 @@ exposed Function getManifestObject() : Object
 	$manifestObject:=JSON Parse:C1218($manifestFile.getText())
 	return $manifestObject
 	
-	
+	//used to generate data
 exposed Function generateData()
 	var $newData : cs:C1710.initData:=cs:C1710.initData.new()
 	$newData.dropData()
