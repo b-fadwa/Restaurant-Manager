@@ -2,7 +2,7 @@
 
 This demo app is built with **4D Qodly Pro** and is meant to inspire you or help you kickstart your own restaurant management project.
 
-## Purpose
+## Purpose of the application
 
 The **Restaurant Manager Application** centralizes daily restaurant operations into a single, intuitive system.  
 It helps teams manage orders, menus, kitchen workflow, inventory, and suppliers while ensuring clear role-based access for staff.
@@ -50,24 +50,31 @@ It helps teams manage orders, menus, kitchen workflow, inventory, and suppliers 
 
 ## Where to Find the Code for Each Feature
 
+- **Generating data**
+
+  - Server: `InitData.4dm` — Generated random data for the application's dataclasses.
+  - UI: `Home.WebForm`
+
 - **Authentication & Roles**
-  - Server: `DataStore.4dm` (authentication & session privileges)
+  - Server: `DataStore.4dm` (authentication & session privileges)  — handles user authentication, session privileges, and role-based access (Admin, Chef, Waiter).
   - UI: `startPage.WebForm` / `loginPage.WebForm`
 
-- **Orders**
-  - UI: `ordersPage.WebForm`, `newOrder.WebForm`,`orderDetails.WebForm`
-  - Server/Data: `Order.4dm`, `OrderEntity.4dm`,`OrderDishEntity.4dm`,`FactureEntity.4dm`.`Waiter.4dm`
+<!-- - **Orders**
+  - UI: `ordersPage.WebForm`, `newOrder.WebForm`,`orderDetails.WebForm` 
+  - Server/Data: `Order.4dm`, `OrderEntity.4dm`,`OrderDishEntity.4dm`,`FactureEntity.4dm`.`Waiter.4dm` 
+— Handles the full order lifecycle including creation, dish assignment, waiter actions, and invoice generation.
 
 - **Menus & Sections**
   - UI: `menusPage.WebForm`, `menuDetails.WebForm` , `newMenu.WebForm`
-  - Server/Data: `MenuSection.4dm`, `MenuSectionEntity.4dm`
+  - Server/Data: `MenuSection.4dm`, `MenuSectionEntity.4dm` — Organizes menus into sections and manages their structure and availability.
+
 
 - **Dishes**
   - UI: `dishesPage.WebForm`,`newDish.WebForm`,`dishDetails.WebForm`
-  - Server/Data: `Dish.4dm`,`DishEntity.4dm`,`DishSelection.4dm`,`DishProductEntity.4dm`
+  - Server/Data: `Dish.4dm`,`DishEntity.4dm`,`DishSelection.4dm`,`DishProductEntity.4dm`— Manages dishes, their details, ingredients, and relationships with products.
 
 - **Inventory & Suppliers**
   - UI: `stocksPage.WebForm`,`supplierDetails.WebForm`,`inventoryDetails.WebForm`,`newSupplier.WebForm`,`newProduct.WebForm`,
-  - Server/Data: `Product.4dm`, `ProductEntity.4dm`,`ProductSupplierEntity.4dm`,`Supplier.4dm`,`SupplierEntity.4dm`
+  - Server/Data: `Product.4dm`, `ProductEntity.4dm`,`ProductSupplierEntity.4dm`,`Supplier.4dm`,`SupplierEntity.4dm`— Tracks stock levels, products, and supplier relationships for efficient inventory management. -->
 
 This structure allows you to easily customize, extend, or reuse the Restaurant Manager application as a foundation for your own food service solutions.
