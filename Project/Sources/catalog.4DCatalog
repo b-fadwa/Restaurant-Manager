@@ -134,12 +134,12 @@
 	</table>
 	<table name="Table" uuid="22449746A2EB40E1B819B99A252026C4" id="10">
 		<field name="UUID" uuid="4D991BDC94DE40F4AF741018CA24690D" type="10" unique="true" autosequence="true" not_null="true" id="1"/>
-		<field name="numberTable" uuid="7B56EEEFD8DF4AF3B06A5969403723AE" type="6" id="2"/>
+		<field name="numberTable" uuid="7B56EEEFD8DF4AF3B06A5969403723AE" type="4" id="2"/>
 		<field name="capacity" uuid="836DEEBC2E704319AE51CE192BD7337B" type="6" id="3"/>
 		<field name="status" uuid="FCE1427C74224520915078D83EA5FD96" type="10" id="4"/>
 		<primary_key field_name="UUID" field_uuid="4D991BDC94DE40F4AF741018CA24690D"/>
 		<table_extra>
-			<editor_table_info fields_ordering="1" displayable_fields_count="13">
+			<editor_table_info displayable_fields_count="13">
 				<color red="231" green="51" blue="81" alpha="255"/>
 				<coordinates left="1015.1278076172" top="451.64770507812" width="390" height="328.865234375"/>
 			</editor_table_info>

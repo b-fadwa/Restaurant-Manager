@@ -3,7 +3,7 @@ Class extends DataStoreImplementation
 // Authenticates a user and assigns role-based or guest privileges using session management
 exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $guestPrivs : Collection:=["guest"; "guestPromoted"]
-	If (($email="") && ($password=""))
+	If ((($email="") && ($password="")))
 		return Session:C1714.setPrivileges($guestPrivs)
 	End if 
 	var $user : cs:C1710.UserEntity:=ds:C1482.User.query("mail = :1"; $email).first()

@@ -196,12 +196,11 @@ Function generateTable()
 	
 	$tables:=New collection:C1472
 	$tables.push(New object:C1471("numberTable"; 1; "capacity"; 4; "statut"; "Available"); New object:C1471("numberTable"; 2; "capacity"; 6; "statut"; "Occupied"); New object:C1471("numberTable"; 3; "capacity"; 2; "statut"; "Available"); New object:C1471("numberTable"; 4; "capacity"; 8; "statut"; "Reserved"); New object:C1471("numberTable"; 5; "capacity"; 4; "statut"; "Available"); New object:C1471("numberTable"; 6; "capacity"; 6; "statut"; "Occupied"); New object:C1471("numberTable"; 7; "capacity"; 2; "statut"; "Available"); New object:C1471("numberTable"; 8; "capacity"; 8; "statut"; "Reserved"); New object:C1471("numberTable"; 9; "capacity"; 4; "statut"; "Available"); New object:C1471("numberTable"; 10; "capacity"; 6; "statut"; "Occupied"))
-	
 	For each ($item; $tables)
 		$table:=ds:C1482.Table.new()
 		$table.capacity:=$item.capacity
 		$table.status:=$item.statut
-		$table.numberTable:=item.numberTable
+		$table.numberTable:=$item.numberTable
 		$info:=$table.save()
 	End for each 
 	
