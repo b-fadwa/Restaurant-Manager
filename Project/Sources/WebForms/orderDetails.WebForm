@@ -48,7 +48,132 @@
 				"depth": null
 			}
 		],
-		"styles": []
+		"styles": [],
+		"states": [
+			{
+				"label": "Base",
+				"id": "root"
+			},
+			{
+				"label": "delivered",
+				"id": "mxvsAxw3iB1mV3NUG86qTH",
+				"conditions": {
+					"id": "wtr514cESVtjYpMG1rGr2s",
+					"type": "datasource",
+					"name": "condition",
+					"value": "Delivered",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:selectedOrder.status",
+					"dsType": "string",
+					"op": "eq"
+				}
+			},
+			{
+				"label": "ready",
+				"id": "hXNRcTfqVpvqx3eyQTuzU1",
+				"conditions": {
+					"id": "jFhVi5nwqwfDt8aCGrYJYR",
+					"type": "datasource",
+					"name": "condition",
+					"value": "Ready",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:selectedOrder.status",
+					"dsType": "string",
+					"op": "eq"
+				}
+			},
+			{
+				"label": "inProgressAdmin",
+				"id": "7ZHF2siAjxZywT5YMXFhFT",
+				"conditions": {
+					"id": "d6msM3SfwXvdt6DKTvoZFT",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "i3EYow6hhucU5VAR3WrbYM",
+							"type": "datasource",
+							"name": "condition",
+							"value": "In Progress",
+							"valueType": "hardCoded",
+							"path": "OrdersModule:selectedOrder.status",
+							"dsType": "string",
+							"op": "eq"
+						},
+						{
+							"id": "brdBK1Vg5eTGjoXdH9bgkG",
+							"type": "privilege",
+							"name": "condition",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "eq"
+						}
+					]
+				}
+			},
+			{
+				"label": "inProgressChef",
+				"id": "mKrcVLFMePr9uCD1LW11js",
+				"conditions": {
+					"id": "vNSrcpnMZDkn6T6ypNiSpK",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "mRALPdwnhy5X1vJvJXXK3x",
+							"type": "datasource",
+							"name": "condition",
+							"value": "In Progress",
+							"valueType": "hardCoded",
+							"path": "OrdersModule:selectedOrder.status",
+							"dsType": "string",
+							"op": "eq"
+						},
+						{
+							"id": "mtpqYHJBPeX9NVGXHFTu1J",
+							"type": "privilege",
+							"name": "condition",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "neq"
+						}
+					]
+				}
+			},
+			{
+				"label": "placed",
+				"id": "dt9HGcaTwbGjFv2hUayrQA",
+				"conditions": {
+					"id": "eT6GRxXMj37LSWmS71ySvn",
+					"type": "combination",
+					"op": "and",
+					"conditions": [
+						{
+							"id": "27Ag1cBLzdFWEnzyzPanhH",
+							"type": "datasource",
+							"name": "condition",
+							"value": "Placed",
+							"valueType": "hardCoded",
+							"path": "OrdersModule:selectedOrder.status",
+							"dsType": "string",
+							"op": "eq"
+						},
+						{
+							"id": "httvfa9i8sUrBh8Rfx4uiV",
+							"type": "privilege",
+							"name": "condition",
+							"value": "manageSections",
+							"valueType": "hardCoded",
+							"op": "neq"
+						}
+					]
+				}
+			},
+			{
+				"label": "placedAdmin",
+				"id": "vfr7biRcu5gPt1KRFiB3E6"
+			}
+		]
 	},
 	"components": {
 		"ROOT": {
@@ -58,25 +183,7 @@
 			"isCanvas": true,
 			"props": {
 				"classNames": [],
-				"events": [
-					{
-						"type": "method",
-						"dataclass": "OrderEntity",
-						"events": [
-							"onload"
-						],
-						"id": "ubTGrdbsYoMPJ8jBHdgmak",
-						"method": "selectedOrder.checkStatus",
-						"params": [],
-						"namespace": "OrdersModule",
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"disabled": false
-					}
-				],
+				"events": [],
 				"className": "bg-white h-full w-full px-6",
 				"airyMode": false,
 				"style": {
@@ -674,7 +781,28 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mKrcVLFMePr9uCD1LW11js": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mxvsAxw3iB1mV3NUG86qTH": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "3XMKPlw5Tz",
 			"hidden": false,
 			"nodes": [
@@ -756,7 +884,18 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:mKrcVLFMePr9uCD1LW11js": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mxvsAxw3iB1mV3NUG86qTH": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "ROOT",
 			"hidden": false,
 			"nodes": [
@@ -784,13 +923,28 @@
 				},
 				"serverSideRef": "displayForChef",
 				"classNames": [
-					"flexGrow",
-					"visibility"
+					"flexGrow"
 				],
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:dt9HGcaTwbGjFv2hUayrQA": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "BV7coEz-go",
 			"hidden": false,
 			"nodes": [
@@ -874,23 +1028,6 @@
 							"enabled": false
 						},
 						"actionType": "datasource"
-					},
-					{
-						"type": "method",
-						"dataclass": "OrderEntity",
-						"events": [
-							"onclick"
-						],
-						"id": "nEenNt2Tf3dZrjiStqGTXR",
-						"method": "selectedOrder.checkStatus",
-						"params": [],
-						"namespace": "OrdersModule",
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"feedback": true
 					}
 				],
 				"iconPosition": "hidden",
@@ -952,13 +1089,23 @@
 				},
 				"serverSideRef": "displayForChef1",
 				"classNames": [
-					"flexGrow",
-					"visibility"
+					"flexGrow"
 				],
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:vfr7biRcu5gPt1KRFiB3E6": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "BV7coEz-go",
 			"hidden": false,
 			"nodes": [
@@ -1043,23 +1190,6 @@
 							]
 						},
 						"actionType": "datasource"
-					},
-					{
-						"type": "method",
-						"dataclass": "OrderEntity",
-						"events": [
-							"onclick"
-						],
-						"id": "7auAoaXpBZqxAmwhxsYSrQ",
-						"method": "selectedOrder.checkStatus",
-						"params": [],
-						"namespace": "OrdersModule",
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"feedback": true
 					}
 				],
 				"iconPosition": "hidden",
@@ -1121,13 +1251,28 @@
 				},
 				"serverSideRef": "displayForWaiter",
 				"classNames": [
-					"flexGrow",
-					"visibility"
+					"flexGrow"
 				],
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:dt9HGcaTwbGjFv2hUayrQA": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:vfr7biRcu5gPt1KRFiB3E6": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "BV7coEz-go",
 			"hidden": false,
 			"nodes": [
@@ -1213,23 +1358,6 @@
 							]
 						},
 						"actionType": "datasource"
-					},
-					{
-						"type": "method",
-						"dataclass": "OrderEntity",
-						"events": [
-							"onclick"
-						],
-						"id": "hDiPGGgJfeJGtYEDu8wd3f",
-						"method": "selectedOrder.checkStatus",
-						"params": [],
-						"namespace": "OrdersModule",
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						},
-						"feedback": true
 					}
 				],
 				"iconPosition": "hidden",
@@ -1845,6 +1973,8 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Set quantity",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"style": {
@@ -1852,7 +1982,6 @@
 					"width": "40%",
 					"minWidth": "40%"
 				},
-				"text": "Set quantity",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -1911,7 +2040,10 @@
 				"placeholder": "",
 				"readonly": false,
 				"datasource": "OrdersModule:newOrderDish.quantity",
-				"dataType": "number"
+				"dataType": "number",
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2394,44 +2526,6 @@
 						"parent": "webform-loader-self",
 						"isHardCoded": true,
 						"target": "newOrder"
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onclick"
-						],
-						"id": "3rjiRuXN1uexLyAuLkvyi3",
-						"method": "ds.noData",
-						"params": [
-							{
-								"name": "selectionLength",
-								"type": "variant",
-								"datasource": "OrdersModule:orders.length",
-								"id": "3S2srdttysDdDXXicASfJW"
-							},
-							{
-								"name": "toHidePart",
-								"type": "string",
-								"datasource": "",
-								"id": "eXVxiWJbf3EF4pQo5eFaTp",
-								"isHardCoded": true,
-								"hardCodedValue": "toHideWhenNoData"
-							},
-							{
-								"name": "toShowPart",
-								"type": "string",
-								"datasource": "",
-								"id": "aGjenNv3c4H4YwdMCmJ8Vo",
-								"isHardCoded": true,
-								"hardCodedValue": "toShowWhenNoData"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						}
 					},
 					{
 						"type": "dialog",
@@ -3392,7 +3486,28 @@
 				"serverSideRef": "dishQuantity"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mKrcVLFMePr9uCD1LW11js": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mxvsAxw3iB1mV3NUG86qTH": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "Ee5kWxv8HF",
 			"hidden": false,
 			"nodes": [],
@@ -3485,7 +3600,28 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mKrcVLFMePr9uCD1LW11js": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mxvsAxw3iB1mV3NUG86qTH": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "bqZGqj638A",
 			"hidden": false,
 			"nodes": [
@@ -3606,7 +3742,28 @@
 				"serverSideRef": "dishQuantity"
 			},
 			"displayName": "Button",
-			"custom": {},
+			"custom": {
+				"states:7ZHF2siAjxZywT5YMXFhFT": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mKrcVLFMePr9uCD1LW11js": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:hXNRcTfqVpvqx3eyQTuzU1": {
+					"style": {
+						"display": "none"
+					}
+				},
+				"states:mxvsAxw3iB1mV3NUG86qTH": {
+					"style": {
+						"display": "none"
+					}
+				}
+			},
 			"parent": "Ee5kWxv8HF",
 			"hidden": false,
 			"nodes": [],

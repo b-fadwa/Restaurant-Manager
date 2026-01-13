@@ -1,9 +1,9 @@
 Class extends DataClass
 
-
-exposed Function filter($param : cs.MenuSectionEntity): cs.DishSelection
-	If ($param = Null)
-		return ds.Dish.all()
-	Else
-		return ds.Dish.query("section.UUID = :1"; $param.UUID)
-	End if
+//searching by section UUID
+exposed Function filter($param : cs:C1710.MenuSectionEntity) : cs:C1710.DishSelection
+	If ($param#Null:C1517)
+		return ds:C1482.Dish.query("section.UUID = :1"; $param.UUID)
+	Else 
+		return ds:C1482.Dish.all()
+	End if 

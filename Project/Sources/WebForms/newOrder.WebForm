@@ -43,6 +43,40 @@
 				"parentId": null,
 				"id": "qZUy7grqYj59_dA24JDRH"
 			}
+		],
+		"states": [
+			{
+				"label": "Base",
+				"id": "root"
+			},
+			{
+				"label": "isDelivery",
+				"id": "6oMGEXhYTQ12YbBmx4KWzT",
+				"conditions": {
+					"id": "rzbooCi55Gr1ig1c4oxj8v",
+					"type": "datasource",
+					"name": "condition",
+					"value": "Delivery",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:newOrder.type",
+					"dsType": "string",
+					"op": "eq"
+				}
+			},
+			{
+				"label": "isDineIn",
+				"id": "iL7kFeZsGrE8bkM9QWMzJX",
+				"conditions": {
+					"id": "4YZ3z18MxLwqwhSbaqSZKh",
+					"type": "datasource",
+					"name": "condition",
+					"value": "Dine-In",
+					"valueType": "hardCoded",
+					"path": "OrdersModule:newOrder.type",
+					"dsType": "string",
+					"op": "eq"
+				}
+			}
 		]
 	},
 	"components": {
@@ -413,7 +447,7 @@
 			"displayName": "Stylebox",
 			"custom": {
 				"contentWidth": 636,
-				"contentHeight": 44
+				"contentHeight": 45
 			},
 			"parent": "K0gVWtvF-7",
 			"hidden": false,
@@ -532,28 +566,6 @@
 						"events": [
 							"onchange"
 						],
-						"id": "wcCDYbnGbyZXiriGcNUXCU",
-						"method": "ds.isDeliveryOrder",
-						"params": [
-							{
-								"name": "option",
-								"type": "Text",
-								"datasource": "OrdersModule:newOrder.type",
-								"id": "coLRxBaVKF6T9XC31PerA6"
-							}
-						],
-						"datasource": "",
-						"returns": {
-							"name": "result",
-							"type": "Variable"
-						}
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onchange"
-						],
 						"id": "rpw1CqPTtjvUP7jDybkt1R",
 						"method": "ds.requiredField",
 						"params": [
@@ -603,7 +615,22 @@
 				"serverSideRef": "orderType"
 			},
 			"displayName": "Radio",
-			"custom": {},
+			"custom": {
+				"states:6oMGEXhYTQ12YbBmx4KWzT": {
+					"options": [
+						{
+							"label": "Dine-In",
+							"value": "Dine-In",
+							"id": "nWgrU7ZqsLR7ZCnPqEAeqe"
+						},
+						{
+							"label": "Delivery",
+							"value": "Delivery",
+							"id": "pHyQMJFGeWaBNfK4qcE6UF"
+						}
+					]
+				}
+			},
 			"parent": "zUMCRFAqa1",
 			"hidden": false,
 			"nodes": [],
@@ -850,7 +877,11 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:iL7kFeZsGrE8bkM9QWMzJX": {
+					"classNames": []
+				}
+			},
 			"parent": "zUMCRFAqa1",
 			"hidden": false,
 			"nodes": [
@@ -977,7 +1008,11 @@
 				"iterableChild": true
 			},
 			"displayName": "Stylebox",
-			"custom": {},
+			"custom": {
+				"states:6oMGEXhYTQ12YbBmx4KWzT": {
+					"classNames": []
+				}
+			},
 			"parent": "zUMCRFAqa1",
 			"hidden": false,
 			"nodes": [

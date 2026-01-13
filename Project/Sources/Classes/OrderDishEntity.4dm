@@ -1,59 +1,57 @@
 Class extends Entity
 
 
-exposed function get totalPrice() : integer
-	return ((this.dish.price # 0) && (this.quantity)) ? this.dish.price*this.quantity : 0
+exposed Function get totalPrice() : Integer
+	return ((This:C1470.dish.price#0) && (This:C1470.quantity)) ? This:C1470.dish.price*This:C1470.quantity : 0
 	
-exposed function incrementQuantity()
-	var $saved: object
-	this.quantity += 1
-	$saved := this.save()
-	if ($saved.success)
-		web Form.setMessage("Incremented!")
-	else 
-		web Form.setError("Not Incremented!")
-	end if 
+	//used to increment/decrement dish quantities for the current order
+exposed Function incrementQuantity()
+	var $saved : Object
+	This:C1470.quantity+=1
+	$saved:=This:C1470.save()
+	If ($saved.success)
+		Web Form:C1735.setMessage("Incremented!")
+	Else 
+		Web Form:C1735.setError("Not Incremented!")
+	End if 
 	
-exposed function decrementQuantity()
-	var $saved: object
-	this.quantity -= 1
-	$saved := this.save()
-	if ($saved.success)
-		web Form.setMessage("Decremented!")
-		if (this.quantity = 0)
-			$saved := this.drop()
-			if ($saved.success)
-				web Form.setMessage("Dish removed from order!")
-			else 
-				web Form.setMessage("Error in quantity=0!")
-			end if 
-		end if 
-	else 
-		web Form.setError("Not decremented!")
-	end if 
+exposed Function decrementQuantity()
+	var $saved : Object
+	This:C1470.quantity-=1
+	$saved:=This:C1470.save()
+	If ($saved.success)
+		Web Form:C1735.setMessage("Decremented!")
+		If (This:C1470.quantity=0)
+			$saved:=This:C1470.drop()
+			If ($saved.success)
+				Web Form:C1735.setMessage("Dish removed from order!")
+			Else 
+				Web Form:C1735.setMessage("Error in quantity=0!")
+			End if 
+		End if 
+	Else 
+		Web Form:C1735.setError("Not decremented!")
+	End if 
 	
 	
-exposed function create($newOrder : cs.OrderEntity)
-	var $saved: object
-	var $orderLength: integer
-	if (not(ds.requiredField(this.dish.UUID; "orderDish")) & (not(ds.requiredField(this.quantity; "orderQuantity"))) & (this.quantity > 0) & (this.quantity # 0))
-		this.order := $newOrder
-		$saved := this.save()
-		$newOrder.decrementQuantity() 
-		if ($saved.success)
-			web Form.setMessage("The dish was successfully added to the order !")
-			web Form["newOrderDish"].hide()
-			ds.removeCss("orderedDishes"; "visibility")
-			$orderLength := ds.Order.query("orderDate = :1"; current Date()).length
-			if ($orderLength = 1)
-				ds.noData($orderLength; "toHideWhenNoData"; "toShowWhenNoData")
-			end if 
-		end if 
-	else 
-		if ((this.quantity < 0) || (this.quantity = 0))
-			web Form.setError("The quantity should be positive and not null")
-		else 
-			web Form.setError("Fill the required fields!")
-		end if 
-	end if
-	ds.removeCss("newOrderTotal"; "visibility")
+exposed Function create($newOrder : cs:C1710.OrderEntity)
+	var $saved : Object
+	var $orderLength : Integer
+	If (Not:C34(ds:C1482.requiredField(This:C1470.dish.UUID; "orderDish")) & (Not:C34(ds:C1482.requiredField(This:C1470.quantity; "orderQuantity"))) & (This:C1470.quantity>0) & (This:C1470.quantity#0))
+		This:C1470.order:=$newOrder
+		$saved:=This:C1470.save()
+		$newOrder.decrementQuantity()
+		If ($saved.success)
+			Web Form:C1735.setMessage("The dish was successfully added to the order !")
+			Web Form:C1735["newOrderDish"].hide()
+			ds:C1482.removeCss("orderedDishes"; "visibility")
+		End if 
+	Else 
+		If ((This:C1470.quantity<0) || (This:C1470.quantity=0))
+			Web Form:C1735.setError("The quantity should be positive and not null")
+		Else 
+			Web Form:C1735.setError("Fill the required fields!")
+		End if 
+	End if 
+	ds:C1482.removeCss("newOrderTotal"; "visibility")
+	

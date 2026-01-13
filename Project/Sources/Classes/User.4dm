@@ -1,4 +1,5 @@
 Class extends DataClass
 
-exposed Function getCurrentUser() : cs.UserEntity
-	return This.get(Session.storage.payLoad.UUID)
+//getting the current connected user
+exposed Function getCurrentUser() : cs:C1710.UserEntity
+	return This:C1470.get(Session:C1714.storage.payLoad.UUID)

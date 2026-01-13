@@ -1,8 +1,10 @@
 Class extends DataClass
 
-exposed Function filter($param : cs.CategoryEntity) : cs.ProductSelection
-	If ($param = Null)
-		return ds.Product.all()
-	Else
-		return ds.Product.query("category.UUID = :1"; $param.UUID)
-	End if
+//search products by category
+exposed Function filter($param : cs:C1710.CategoryEntity) : cs:C1710.ProductSelection
+	If ($param#Null:C1517)
+		return ds:C1482.Product.query("category.UUID = :1"; $param.UUID)
+	Else 
+		return ds:C1482.Product.all()
+	End if 
+	

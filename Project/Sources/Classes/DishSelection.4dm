@@ -1,15 +1,16 @@
 Class extends EntitySelection
 
-exposed function addToList($dishSelection : cs.DishSelection):cs.DishSelection
-	var $selection: cs.DishSelection
-	var $dish:cs.DishEntity
-	$selection := this.copy()
-	for Each($dish; $dishSelection)
+// Returning a new dish selection by adding/removing the given dishes to the current selection.
+exposed Function addToList($dishSelection : cs:C1710.DishSelection) : cs:C1710.DishSelection
+	var $selection : cs:C1710.DishSelection
+	var $dish : cs:C1710.DishEntity
+	$selection:=This:C1470.copy()
+	For each ($dish; $dishSelection)
 		$selection.add($dish)
-	end for each
+	End for each 
 	return $selection
-
-exposed function removeFromList($dishSelection : cs.DishSelection):cs.DishSelection
-	var $selection: cs.DishSelection
-	$selection := this.copy()
+	
+exposed Function removeFromList($dishSelection : cs:C1710.DishSelection) : cs:C1710.DishSelection
+	var $selection : cs:C1710.DishSelection
+	$selection:=This:C1470.copy()
 	return $selection.minus($dishSelection)
