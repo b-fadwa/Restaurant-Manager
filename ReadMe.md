@@ -47,6 +47,9 @@ It helps teams manage orders, menus, kitchen workflow, inventory, and suppliers 
   - **Chef**
   - **Waiter**
 - Sample data can be generated via a dedicated data generator method or from the UI (page Home).
+- To test the login, you can use the following credentials:
+  - **Email:** john.smith@example.com  
+  - **Password:** a1b2c3
 
 ## Where to Find the Code for Each Feature
 
